@@ -1,7 +1,7 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \Project Vanguard RPG
+# Project Vanguard RPG
  
  Authors: \([Steven Ryan Leonido](https://github.com/SRaionido)\) ([Jin Koh](https://github.com/jkoh006)\) ([Samarth Srinivasa](https://github.com/SamarthSrinivasa)\) ([Maelle Louissaint](https://github.com/markie-bit)\)
 
