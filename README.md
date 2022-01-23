@@ -21,13 +21,16 @@
 
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
- > * What will be the input/output of your project? What are the features that the project provides?
- > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > Why is this interesting to us?
+Gaming has become a more wide-spread and accessible form of entertainment that is a part of everyday lives. Learning the process of game making and the code, processes, and logic behind making a working game align with our personal interests due to how we all enjoy gaming ourselves for entertainment. We all have experience playing multiple video games and watching TV shows in our lifetime, and we feel like having that knowledge gives us the skills necessary to build a fantasy game that hits all the points that has made our childhoods so memorable and exciting. Because we are have direct control over our project, we have great flexibility and can input a lot of creativity into our project, which will definitely make this an enjoyable and worthwhile experience.
+ > What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+  C++ - Primary programming languag where we will develop all the backend and utilize the design patterns we have learned throughout this quarter.
+  Github - For sharing and access of code, and for organization sake through the kanban board.
+  Discord - To make sure we are able to communicate and work efficiently.
+  IDE's and Text Editors (VSCODE, VIM, EMACS) - For code creation, editing and test cration.
+ > What will be the input/output of your project? What are the features that the project provides?
+We are basing our project on the general Fantasy RPG format, so there we be a chosen character that can attack, run, use items, heal, and make decisions to move the story. he classes that can be chosen are Farmer, warrior, archer, Paladin and Mage. They each have specific abilities tailored to the class that affects different interactions within the game. Different items and powerups can be purchased with the currency system called Okras. Since the game is based on story making decisions, which paths you pick can unlock different bosses, story arcs, and endings.
+ > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted.
  > 
  > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
  > ## Phase II
