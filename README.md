@@ -9,7 +9,7 @@
    * C++ - Primary programming languag where we will develop all the backend and utilize the design patterns we have learned throughout this quarter.
    * Github - For sharing and access of code, and for organization sake through the kanban board.
    * Discord - To make sure we are able to communicate and work efficiently.
-   * IDE's and Text Editors (VSCODE, VIM, EMACS) - For code creation, editing and test cration.
+   * IDE's and Text Editors (VSCODE, VIM, EMACS) - For code creation, editing and test creation.
 * What will be the input/output of your project? What are the features that the project provides?
   * We are basing our project on the general Fantasy RPG format, so there we be a chosen character that can attack, run, use items, heal, and make decisions to move the story. The classes that can be chosen are Farmer, warrior, archer, Paladin and Mage. They each have specific abilities tailored to the class that affects different interactions within the game. Different items and powerups can be purchased with the currency system called Okras. Since the game is based on story making decisions, which paths you pick can unlock different bosses, story arcs, and endings.
 
