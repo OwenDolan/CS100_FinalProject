@@ -19,7 +19,8 @@
 
 ![CS100 Project UML Image](https://user-images.githubusercontent.com/97153990/153325250-e474db5c-80ea-442e-a02d-e314b563294d.png)
 
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+* UML Description:
+  * In order to create our text-based-rpg game, our plan is to implement scene, item, character, and menu objects. Scene objects will be used to help drive decisions like a tree and allow the character to move to different scenes through the use of previous and next scene pointers. Dying in game will take you immediately to the tail, and running from a fight will take you back to the beginning. Decisions related to buying items, story decisions, and fight decisions within scenes will be done through the menu object within each scene. The character object will be used to give the player choice at the start of the game and give them a certain class with its own unique skills to use within fights. The character object will also have an enemy subclass in order to facilitate fights between objects of the same type. Lastly the item obejct will be used to decide variables with in characters, such as damage and armor. The item object will also be used within a shop to allow players to upgrade their weapons, armor, and stats.
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
