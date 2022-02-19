@@ -6,14 +6,15 @@ using namespace std;
 
 class Scene {
 
-private:
+ private:
     Scene* farLeft;
     Scene* midLeft;
     Scene* midRight;
     Scene* farRight;
-    string desrip;
+    string descrip;
+    string introStory;
 
-public:
+ public:
     Scene(string);
     ~Scene();
     Scene* getFarLeft();
@@ -26,6 +27,8 @@ public:
     void setMidLeft(Scene*);
     void setMidRight(Scene*);
     void setFarRight(Scene*);
+    virtual void outputDescrip() = 0;
+    virtual void outputIntroStory() = 0;
 };
 
 #endif
