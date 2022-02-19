@@ -23,6 +23,7 @@ class Scene {
     Scene* getFarRight();
     string getDescrip();
     void setDescrip(string);
+    void setIntroStory(string);
     void setFarLeft(Scene*);
     void setMidLeft(Scene*);
     void setMidRight(Scene*);
