@@ -12,10 +12,7 @@ Scene::Scene(string d) {
 }
 
 Scene::~Scene() {
-    delete farLeft;
-    delete midLeft;
-    delete midRight;
-    delete farRight;
+    //delete menu pointer when implemented
 }
 
 Scene* Scene::getFarLeft() { return farLeft; }
