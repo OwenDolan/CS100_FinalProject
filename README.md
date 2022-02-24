@@ -1,6 +1,6 @@
 # Project Vanguard RPG
  
- Authors: \([Steven Ryan Leonido](https://github.com/SRaionido)\) ([Jin Koh](https://github.com/jkoh006)\) ([Samarth Srinivasa](https://github.com/SamarthSrinivasa)\) ([Maelle Louissaint](https://github.com/markie-bit)\) ([Owen Dolan]) (https://github.com/OwenDolan)
+ Authors: \([Steven Ryan Leonido](https://github.com/SRaionido)\) ([Jin Koh](https://github.com/jkoh006)\) ([Samarth Srinivasa](https://github.com/SamarthSrinivasa)\) ([Maelle Louissaint](https://github.com/markie-bit)\) ([Owen Dolan](https://github.com/OwenDolan)\)
 
 ## Project Description
 * Why is this interesting to us?
@@ -37,8 +37,8 @@
  > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
  > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
  > * What tasks you are planning for this next sprint.
-* Design Pattern:
- * For our project, the strategy pattern has been chosen to help the Scene class and the implementation of a menu. Our player will need to interact with each Scene within our game, although the type of scene would lead to a different type of menu. An example being that an event scene would need the player to choose between a decision while a fight scene would constantly have the player looping over attack or item usage decisions till the player or enemies are killed. These are two varying algorithms and to have the possibility of expansion with other type of scenes without needing to constantly go back and change each scene, the use of a menu item will do the job of interacting and return the decision of the player to progress the story.
+* Design Pattern (Strategy Pattern):
+  * For our project, the strategy pattern has been chosen to help the Scene class and the implementation of a menu. Our player will need to interact with each Scene within our game, although the type of scene would lead to a different type of menu. An example being that an event scene would need the player to choose between a decision while a fight scene would constantly have the player looping over attack or item usage decisions till the player or enemies are killed. These are two varying algorithms and to have the possibility of expansion with other type of scenes without needing to constantly go back and change each scene, the use of a menu item will do the job of interacting and return the decision of the player to progress the story.
 
  
  > ## Final deliverable
