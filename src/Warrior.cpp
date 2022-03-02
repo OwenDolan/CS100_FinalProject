@@ -2,16 +2,29 @@
 
 using namespace std;
 
-void Warrior::setWarriorAttack(int value) {
-	this->setAtk(value);
+int Warrior::basicAtk() {
+	return 5;
 }
-
-void Warrior::resonantSmash() {
+int Warrior::warriorSpecial1() {
 	bloodLustActive = true;
-	fatigue = true;
+	fatigue = false;
+	warriorSpecialName = "Resonant Smash";
+	return 5;
 }
 
-void Warrior::shieldBash() {
-	this->setDefense(0);
-	this->setAtk(100); // or something a lot higher
+int Warrior::warriorSpecial2() {
+	warriorSpecialName = "Shield Bash";
+	if (fatigue == true && bloodLustActive == false) {
+		fatigue = false;
+		return 3;
+	}
+	else if (bloodLustActive == true && fatigue == false)
+	{
+		fatigue = true;
+		return 10;
+	}
+	else {
+		return 5;
+	}
+
 }

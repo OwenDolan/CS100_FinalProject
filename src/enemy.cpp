@@ -2,23 +2,14 @@
 
 using namespace std;
 
-void enemy::setEnemyAttack(int value) {
-	enemyAtk = this->setAtk(value);
+int enemy::basicAtk() {
+	return 2;
+}
+int enemy::enemySpecial1() {
+	enemySpecialName = "Wild Swing";
+	return 3;
 }
 
-void enemy::setEnemyHealth(int value) {
-	this->setHealth(value);
+string enemy::getSkillName() {
+	return enemySpecialName;
 }
-
-void enemy::setEnemyDefense(int value) {
-	this->setDefense(value);
-}
-
-void enemy::setEnemySpeed(int value) {
-	this->setSpeed(value);
-}
-
-void enemy::wildSwing() {
-	this->setAtk(enemyAtk + 5);
-	//.. attack somehow
-	//}

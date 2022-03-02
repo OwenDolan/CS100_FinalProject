@@ -2,23 +2,19 @@
 
 using namespace std;
 
-void Paladin::setPaladinAttack(int value) {
-	this->setAtk(value);
+int Paladin::basicAtk() {
+	return 5;
 }
 
-void Paladin::setPaladinDefense(int value) {
-	this->setDefense(value);
+int Paladin::paladinSpecial1() {
+	paladinSpecialName = "Tide Caller";
+	this->setDefense(this->getDefense() + 5);
+	return 5;
 }
 
-void Paladin::tideCaller() {
-	//..
-}
 
-//void Paladin::partyProtect() {
-//
-//}
-
-void Paladin::heal() {
+void Paladin::paladinSpecial2() {
+	paladinSpecialName = "Heal";
 	int currentHealth = this->getHealth();
 	int newHealth = currentHealth + 100;
 	this->setHealth(newHealth);
