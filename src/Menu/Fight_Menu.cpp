@@ -5,7 +5,7 @@
 //  Created by Owen Dolan on 2/22/22.
 //
 
-#include "Fight_Menu.hpp"
+#include "../../header/Menu/Fight_Menu.hpp"
 #include <iostream>
 using namespace std;
 
@@ -31,7 +31,10 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
                 damage = specialAttack();
             }
             else if (attackMove == 3) {
-                //get inventory from character and display
+                vector<Item*> inventory = player->returnInventory();
+                for (int i = 0; i < inventory.size(); i++) {
+                    inventory.at(i)->printItemName();
+                }
             }
             else if (attackMove == 4) {
                 //use item
@@ -64,4 +67,12 @@ void Fight_Menu::itemCheck() { //displays what user has in inventory (can call f
 }
 void Fight_Menu::run() { //leave encounter
     //implement to return to a different scene
+}
+
+Fight_Menu::Fight_Menu(Character* p) {
+    player = p;
+}
+
+Character* Fight_Menu::returnPlayer() {
+    return player;
 }

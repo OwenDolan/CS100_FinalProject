@@ -1,5 +1,5 @@
-#include "Item.h"
-#include "Healing.h"
+#include "../../header/Items/Item.h"
+#include "../../header/Items/Healing.h"
 
 #include <iostream>
 #include <string>
