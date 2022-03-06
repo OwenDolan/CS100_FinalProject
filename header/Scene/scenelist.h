@@ -3,24 +3,19 @@
 
 #include <iostream>
 #include "scene.h"
+#include <vector>
 
 using namespace std;
 
 class SceneList {
 
  private:
-    Scene* head;
-    Scene* tail;
-    Scene* curr;
+    vector<Scene*> list;
 
  public:
     SceneList();
     ~SceneList();
-    void destroyRecursive(Scene*);
     void insert(Scene*, Scene*);
-    Scene* getHead();
-    Scene* getTail();
-    Scene* getCurr();
     void progressStory();
 };
 

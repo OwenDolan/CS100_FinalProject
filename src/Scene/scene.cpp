@@ -3,37 +3,18 @@
 
 using namespace std;
 
-Scene::Scene(string d) {
+Scene::Scene(string d, string s) {
     descrip = d;
-    farLeft = nullptr;
-    midLeft = nullptr;
-    midRight = nullptr;
-    farRight = nullptr;
+    introStory =s;
+    loc = 0;
 }
 
 Scene::~Scene() {
-    delete farLeft;
-    delete midLeft;
-    delete midRight;
-    delete farRight;
+    //delete menu;
 }
-
-Scene* Scene::getFarLeft() { return farLeft; }
-
-Scene* Scene::getMidLeft() { return midLeft; }
-
-Scene* Scene::getMidRight() { return midRight; }
-
-Scene* Scene::getFarRight() { return farRight; }
 
 void Scene::setDescrip(string a) { descrip = a; }
 
 void Scene::setIntroStory(string a) { introStory = a; }
 
-void Scene::setFarLeft(Scene* a) { farLeft = a; }
-
-void Scene::setMidLeft(Scene* a) { midLeft = a; }
-
-void Scene::setMidRight(Scene* a) { midRight = a; }
-
-void Scene::setFarRight(Scene* a) { farRight = a; }
+void Scene::setLoc(int a) { loc = a; }
