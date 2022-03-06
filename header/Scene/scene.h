@@ -7,7 +7,7 @@ using namespace std;
 
 class Scene {
 
- private:
+ protected:
     string descrip;
     string introStory;
     int loc; // meant to determine index of obj in scenelist

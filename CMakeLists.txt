@@ -16,7 +16,7 @@ ADD_EXECUTABLE(game
 )
 
 ADD_EXECUTABLE(test
-    test/unit_test.cpp
+    tests/unit_test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
