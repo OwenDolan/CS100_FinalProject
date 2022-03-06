@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "scene.h"
-#include "Item.h"
+#include "../Items/Item.h"
 
 using namespace std;
 

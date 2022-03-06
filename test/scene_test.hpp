@@ -1,7 +1,7 @@
 #ifndef __SCENE_TEST_HPP__
 #define __SCENE_TEST_HPP__
 
-#include "../gtest/gtest.h"
+#include "gtest/gtest.h"
 
 #include "../header/Scene/scene.h"
 #include "../header/Scene/eventscene.h"

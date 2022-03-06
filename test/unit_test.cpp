@@ -1,7 +1,8 @@
-#include "../gtest/gtest.h"
+#include "gtest/gtest.h"
 
 #include "scene_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TES
+  return RUN_ALL_TESTS();
+}

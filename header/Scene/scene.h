@@ -16,13 +16,12 @@ class Scene {
  public:
     Scene(string, string);
     ~Scene();
-    string getDescrip();
     void setDescrip(string);
     void setIntroStory(string);
     void setLoc(int);
     int getLoc();
     string getDescrip();
-    string getintroStory();
+    string getIntroStory();
     virtual void outputDescrip() = 0;
     virtual void outputIntroStory() = 0;
 };

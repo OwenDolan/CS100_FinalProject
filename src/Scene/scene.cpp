@@ -23,4 +23,4 @@ int Scene::getLoc() { return loc; }
 
 string Scene::getDescrip() { return descrip; }
 
-string Scene::getintroStory() { return introStory; }
+string Scene::getIntroStory() { return introStory; }
