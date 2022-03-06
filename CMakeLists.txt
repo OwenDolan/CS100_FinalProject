@@ -10,3 +10,7 @@ ADD_EXECUTABLE(game
     src/Items/Item.cpp
     src/Items/Healing.cpp
 )
+
+ADD_EXECUTABLE(test
+    test/unit_test.cpp
+)
