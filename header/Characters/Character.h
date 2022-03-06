@@ -2,7 +2,7 @@
 #define __CHARACTER_H__
 #include <iostream>
 #include <string>
-#include "../Items/item.h"// include whatever this is
+#include "../Items/Item.h"// include whatever this is
 #include <vector>
 
 using namespace std;

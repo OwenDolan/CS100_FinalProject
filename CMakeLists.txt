@@ -17,6 +17,8 @@ ADD_EXECUTABLE(game
 
 ADD_EXECUTABLE(test
     tests/unit_test.cpp
+    src/Scene/scene.cpp
+    src/Scene/eventscene.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

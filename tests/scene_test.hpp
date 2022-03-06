@@ -3,7 +3,7 @@
 
 #include "gtest/gtest.h"
 
-#include "../header/Scene/scene.h"
+//#include "../header/Scene/scene.h"
 #include "../header/Scene/eventscene.h"
 #include "../header/Items/Item.h"
 
