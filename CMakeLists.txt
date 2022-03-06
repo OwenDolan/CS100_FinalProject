@@ -1,4 +1,8 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+SET(CMAKE_CXX_STANDARD 11)
+
+ADD_SUBDIRECTORY(googletest)
 
 project(TextRPG)
 
@@ -10,3 +14,12 @@ ADD_EXECUTABLE(game
     src/Items/Item.cpp
     src/Items/Healing.cpp
 )
+
+ADD_EXECUTABLE(test
+    tests/unit_test.cpp
+    src/Scene/scene.cpp
+    src/Scene/eventscene.cpp
+)
+
+TARGET_LINK_LIBRARIES(test gtest)
+TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)

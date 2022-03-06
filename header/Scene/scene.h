@@ -7,7 +7,7 @@ using namespace std;
 
 class Scene {
 
- private:
+ protected:
     string descrip;
     string introStory;
     int loc; // meant to determine index of obj in scenelist
@@ -16,10 +16,12 @@ class Scene {
  public:
     Scene(string, string);
     ~Scene();
-    string getDescrip();
     void setDescrip(string);
     void setIntroStory(string);
     void setLoc(int);
+    int getLoc();
+    string getDescrip();
+    string getIntroStory();
     virtual void outputDescrip() = 0;
     virtual void outputIntroStory() = 0;
 };
