@@ -20,6 +20,9 @@ class Scene {
     void setDescrip(string);
     void setIntroStory(string);
     void setLoc(int);
+    int getLoc();
+    string getDescrip();
+    string getintroStory();
     virtual void outputDescrip() = 0;
     virtual void outputIntroStory() = 0;
 };
