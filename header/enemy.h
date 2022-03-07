@@ -13,7 +13,7 @@ public:
 		:base(h, s, d, a)
 	{}
 	int enemySpecial1();
-
+	string getSkillName();
 
 };
 #endif

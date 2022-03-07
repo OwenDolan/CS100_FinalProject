@@ -32,3 +32,6 @@ void Farmer::farmerSpecial2() {
 	return 0;
 }
 
+string Farmer::getSkillName() {
+	return farmerSpecialName;
+}

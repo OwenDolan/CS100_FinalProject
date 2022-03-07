@@ -16,6 +16,7 @@ public:
 	{}
 	int warriorSpecial1();
 	int warriorSpecial2();
+	string getSkillName();
 };
 
 #endif

@@ -19,6 +19,7 @@ public:
 	void infiniteMP();
 	int farmerSpecial1();
 	int farmerSpecial2();
+	string getSkillName();
 }
 
 #endif

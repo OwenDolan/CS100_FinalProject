@@ -20,3 +20,8 @@ void Paladin::paladinSpecial2() {
 	this->setHealth(newHealth);
 	
 }
+
+string Paladin::getSkillName() {
+	return paladinSpecialName;
+
+}

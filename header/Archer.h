@@ -19,7 +19,7 @@ public:
 	int archerSpecial1();
 	int archerSpecial2();
 	void elementalArrow();
-
+        string getSkillName();
 };
 
 #endif

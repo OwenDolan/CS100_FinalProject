@@ -14,6 +14,7 @@ public:
 	{}
 	int paladinSpecial1(); //counterAttack
 	int paladinSpecial2();
+	string getSkillName();
 };
 
 #endif

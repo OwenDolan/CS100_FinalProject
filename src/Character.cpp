@@ -27,7 +27,13 @@ int Character::getAtk() {
 	return atk;
 }
 
+int Character::getCurrency() {
+	return currency;
+}
 
+void Character::setCurrency(int newCurrency) {
+	currency = newCurrency;
+}
 void Character::setSpeed(int newSpeed) {
 	speed = newSpeed;
 

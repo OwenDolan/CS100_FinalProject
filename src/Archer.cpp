@@ -16,7 +16,7 @@ int Archer::archerSpecial1() {
 	return 5;
 }
 
-int Archer::archerSpecial2()() {
+int Archer::archerSpecial2() {
 	for (int i = 0; i < 5; i++) {
 		if (arr[i] == "fire" && this->element == "fire") {
 			archerSpecialName = "Fire Arrow";
@@ -49,4 +49,6 @@ int Archer::archerSpecial2()() {
 	
 }
 
-
+string Archer::getSkillName() {
+	return archerSpecialName;
+}

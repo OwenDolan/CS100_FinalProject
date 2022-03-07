@@ -2,7 +2,8 @@
 #define __CHARACTER_H__
 #include <iostream>
 #include <string>
-#include "item.h" 
+#include "Item.h"
+#include "Menu.hpp" 
 
 using namespace std;
 
@@ -12,7 +13,7 @@ private:
 	int speed;
 	int defense;
 	int atk; 
-
+	int currency = 0;
 	item* [] inventory;
 
 
@@ -22,6 +23,8 @@ public:
 	int getSpeed();
 	int getDefense();
 	int getAtk();
+	int getCurrency();
+	void setCurrency(int newCurrency);
 	void setSpeed(int newSpeed);
 	void setHealth(int newHealth);
 	void setAtk(int newAtk);

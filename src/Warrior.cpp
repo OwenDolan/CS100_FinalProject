@@ -28,3 +28,7 @@ int Warrior::warriorSpecial2() {
 	}
 
 }
+
+string Warrior::getSkillName() {
+	return warriorSpecialName;
+}
