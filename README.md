@@ -1,6 +1,6 @@
 # Project Vanguard RPG
  
- Authors: \([Steven Ryan Leonido](https://github.com/SRaionido)\) ([Jin Koh](https://github.com/jkoh006)\) ([Samarth Srinivasa](https://github.com/SamarthSrinivasa)\) ([Maelle Louissaint](https://github.com/markie-bit)\)
+ Authors: \([Steven Ryan Leonido](https://github.com/SRaionido)\) ([Jin Koh](https://github.com/jkoh006)\) ([Samarth Srinivasa](https://github.com/SamarthSrinivasa)\) ([Maelle Louissaint](https://github.com/markie-bit)\) ([Owen Dolan](https://github.com/OwenDolan)\)
 
 ## Project Description
 * Why is this interesting to us?
@@ -22,21 +22,13 @@
 * UML Description:
   * In order to create our text-based-rpg game, our plan is to implement scene, item, character, and menu objects. Scene objects will be used to help drive decisions like a tree and allow the character to move to different scenes through the use of previous and next scene pointers. Dying in game will take you immediately to the tail, and running from a fight will take you back to the beginning. Decisions related to buying items, story decisions, and fight decisions within scenes will be done through the menu object within each scene. The character object will be used to give the player choice at the start of the game and give them a certain class with its own unique skills to use within fights. The character object will also have an enemy subclass in order to facilitate fights between objects of the same type. Lastly the item obejct will be used to decide variables with in characters, such as damage and armor. The item object will also be used within a shop to allow players to upgrade their weapons, armor, and stats.
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ ## Phase III
+ 
+ ![UML Diagram Updated](https://user-images.githubusercontent.com/97153990/155442687-73e74da2-1143-4f84-8881-1eefd97da8db.png)
+
+ 
+* Design Pattern (Strategy Pattern):
+  * For our project, the strategy pattern has been chosen to help the Scene class and the implementation of a menu. Our player will need to interact with each Scene within our game, although the type of scene would lead to a different type of menu. An example being that an event scene would need the player to choose between a decision while a fight scene would constantly have the player looping over attack or item usage decisions till the player or enemies are killed. These are two varying algorithms and to have the possibility of expansion with other type of scenes without needing to constantly go back and change each scene, the use of a menu item will do the job of interacting and return the decision of the player to progress the story.
 
  
  > ## Final deliverable

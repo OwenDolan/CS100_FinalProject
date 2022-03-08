@@ -8,6 +8,8 @@
 #ifndef MENU_HPP
 #define MENU_HPP
 
+#pragma once
+
 #include <stdio.h>
 
 #endif /* menu_hpp */

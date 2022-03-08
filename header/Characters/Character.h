@@ -2,7 +2,7 @@
 #define __CHARACTER_H__
 #include <iostream>
 #include <string>
-#include "item.h"// include whatever this is
+#include "../Items/Item.h"// include whatever this is
 #include <vector>
 
 using namespace std;
@@ -30,6 +30,8 @@ public:
 	void setDefense(int newDefense);
 	void setMP(int newMP);
 //	maybe setName?
+	vector<Item*>& returnInventory();
+	void addToInventory(Item* i);
 
 
 	

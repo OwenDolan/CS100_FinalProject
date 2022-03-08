@@ -21,5 +21,6 @@ private:
 public:
     void print(); //prints welcome message and menu options
     void exit(); //needs to call destructor and confirms exit
+    int chooseCharacter(); //choses character and returns selection to main where it creates the player on the heap
     
 };

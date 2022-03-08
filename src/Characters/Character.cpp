@@ -1,4 +1,4 @@
-#include "Character.h"
+#include "../../header/Characters/Character.h"
 
 using namespace std;
 
@@ -34,4 +34,12 @@ void Character::setDefense(int newDefense) {
 
 void Character::setMP(int newMP) {
 	this->MP = newMP;
+}
+
+vector<Item*>& Character::returnInventory() {
+	return inventory;
+}
+
+void Character::addToInventory(Item* i) {
+	inventory.push_back(i);
 }
