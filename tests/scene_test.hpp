@@ -5,7 +5,7 @@
 
 #include "../header/Scene/eventscene.h"
 #include "../header/Items/Item.h"
-#include "../header.Menu/Main_Menu.hpp"
+#include "../header/Menu/Main_Menu.hpp"
 
 TEST(SceneTest, TestConstructor) {
     Menu* m = new Main_Menu();

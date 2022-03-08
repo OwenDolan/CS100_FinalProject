@@ -15,7 +15,7 @@ class Scene {
 
  public:
     Scene(string, string, Menu*);
-    ~Scene();
+    virtual ~Scene();
     void setDescrip(string);
     void setIntroStory(string);
     void setLoc(int);

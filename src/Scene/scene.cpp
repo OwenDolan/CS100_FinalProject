@@ -22,7 +22,7 @@ void Scene::setLoc(int a) { loc = a; }
 
 int Scene::getLoc() { return loc; }
 
-Menu* Scene::getMenu() ( return menu; }
+Menu* Scene::getMenu() { return menu; }
 
 string Scene::getDescrip() { return descrip; }
 
