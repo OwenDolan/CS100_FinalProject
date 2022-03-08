@@ -20,6 +20,8 @@ ADD_EXECUTABLE(test
     tests/unit_test.cpp
     src/Scene/scene.cpp
     src/Scene/eventscene.cpp
+    src/Menu/Menu.cpp
+    src/Menu/Main_Menu.cpp
 )
 
 
