@@ -3,10 +3,11 @@
 
 using namespace std;
 
-Scene::Scene(string d, string s) {
+Scene::Scene(string d, string s, Menu* m) {
     descrip = d;
     introStory =s;
     loc = 0;
+    menu = m;
 }
 
 Scene::~Scene() {

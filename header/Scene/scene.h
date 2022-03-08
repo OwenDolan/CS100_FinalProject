@@ -14,7 +14,7 @@ class Scene {
     Menu* menu;
 
  public:
-    Scene(string, string);
+    Scene(string, string, Menu*);
     ~Scene();
     void setDescrip(string);
     void setIntroStory(string);

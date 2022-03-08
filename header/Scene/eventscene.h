@@ -14,7 +14,7 @@ private:
   vector<Item*> itemList;
 
 public:
-  EventScene(string, string, vector<Item*>);
+  EventScene(string, string, Menu*, vector<Item*>);
   ~EventScene();
   void outputDescrip();
   void outputIntroStory();
