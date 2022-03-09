@@ -6,14 +6,19 @@ using namespace std;
 
 class Mage : public Character {
 private:
-	int mageAttackModifier = 0.5;// mage normal attacks should do less
+	string mageSpecialName;
+
 	
 public:
-	void setMageMP(int value);
-	void fireBlast();
-	void icyWind();
-	void lightningRose();
 
+	Mage(int h, int s, int d, int a)
+		:base(h, s, d, a)
+	{}
+	int basicAtk();	
+	int mageSpecial1();
+	int mageSpecial2();
+	int mageSpecial3();
+	string getSkillName();
 
 };
 #endif
