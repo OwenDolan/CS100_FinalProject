@@ -52,7 +52,7 @@ void ShopMenu::buy(Character* player, int item, string t) {
   }
 
   if (player->getCurrency() >= newItem->getPrice()) {              /*price check */
-    player->addtoInventory(newItem);
+    player->addInventory(newItem);
     currentCurrency = currentCurrency - newItem->getPrice() - 50;
     player->setCurrency(currentCurrency);
 
