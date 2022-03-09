@@ -2,8 +2,8 @@
 #define __CHARACTER_H__
 #include <iostream>
 #include <string>
-#include "Item.h"
-#include "Menu.hpp" 
+#include "../Items/Item.h"
+#include "../Menu/Menu.hpp" 
 
 using namespace std;
 
