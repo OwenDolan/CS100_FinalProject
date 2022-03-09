@@ -53,5 +53,10 @@ void Character::setDefense(int newDefense) {
 	defense = newDefense;
 }
 
+vector<Item*> Character::getInventory() {
+	return inventory;
+}
 
-
+void Character::addInventory(Item *i) {
+	inventory.push_back(i);
+}
