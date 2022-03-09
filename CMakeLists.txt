@@ -22,6 +22,16 @@ ADD_EXECUTABLE(test
     src/Scene/eventscene.cpp
 )
 
+ADD_EXECUTABLE(shop
+    src/Menu/Shop_Menu_test.cpp
+    src/Menu/Menu.cpp
+    src/Menu/Shop_Menu.cpp
+    src/Characters/Character.cpp
+    src/Items/Item.cpp
+    src/Items/Healing.cpp
+    src/Items/Armor.cpp
+    src/Items/Weapon.cpp
+)
 
 TARGET_LINK_LIBRARIES(test gtest)
 TARGET_COMPILE_DEFINITIONS(test PRIVATE gtest_disable_pthreads=ON)
