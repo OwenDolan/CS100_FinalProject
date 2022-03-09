@@ -14,6 +14,8 @@ ADD_EXECUTABLE(game
     src/Characters/Character.cpp
     src/Items/Item.cpp
     src/Items/Healing.cpp
+    src/Scene/scene.cpp
+    src/Scene/eventscene.cpp
 )
 
 ADD_EXECUTABLE(test

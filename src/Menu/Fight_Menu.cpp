@@ -76,3 +76,5 @@ Fight_Menu::Fight_Menu(Character* p) {
 Character* Fight_Menu::returnPlayer() {
     return player;
 }
+
+int Fight_Menu::chooseCharacter() { return 0; }
