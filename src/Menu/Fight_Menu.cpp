@@ -46,7 +46,7 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
                 cin.ignore();
                 cin >> item;
             }
-            vector<Item*> inventory = player->returnInventory();
+            vector<Item*> inventory = player->getInventory();
             Item* i = inventory.at(item);
             useItem(i);
         }
