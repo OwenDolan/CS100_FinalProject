@@ -16,6 +16,13 @@ int main() {
     player->setCurrency(1000);
     ShopMenu shop = ShopMenu(player);
     player = shop.print();
+    cout << player->getCurrency() << endl;
+
+    vector<Item*> inv = player->getInventory();
+
+    for (int i = 0; i <= inv.size() - 1; ++i) {
+	inv.at(i)->printItemName();
+    }
 
     return 0;
 }

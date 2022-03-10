@@ -43,20 +43,21 @@ Character* ShopMenu::print() {
 
 void ShopMenu::buy(Character* player, int item, string t) {
   int currentCurrency = player->getCurrency();
+  Item* newItem;
 
   if (t == "weapon") {
-    Weapon* newItem = new Weapon(item);
+    newItem = new Weapon(item);
   }
   else if (t == "armor") {
-    Armor* newItem = new Armor(item);
+    newItem = new Armor(item);
   }
   else {
-    Healing* newItem = new Healing(item);
+    newItem = new Healing(item);
   }
 
- /* if (player->getCurrency() >= newItem->getPrice()) {              price check *
+ if (player->getCurrency() >= newItem->getPrice()) {             /* price check */
     player->addInventory(newItem);
-    currentCurrency = currentCurrency - newItem->getPrice() - 50;
+    currentCurrency = currentCurrency - newItem->getPrice();
     player->setCurrency(currentCurrency);
 
     cout << "You have bought the ";
@@ -66,8 +67,8 @@ void ShopMenu::buy(Character* player, int item, string t) {
 
   else {
     cout << "You don't have enough Okra to buy this item" << endl;
-   // delete newItem;
-  }*/
+    delete newItem;
+  }
 }
 
 string ShopMenu::menu() {
@@ -123,6 +124,21 @@ void ShopMenu::healingMenu() {
 
   createHealingList();
   cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+
+  int healingChoice;
+  string type = "healing";
+
+  cin >> healingChoice;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (healingChoice <= 0 || healingChoice > NUM_HEALING_ITEMS) {
+    cout << "Invalid item" << endl;
+  }
+  else {
+    buy(player, healingChoice, type);
+  }
 }
 
 void ShopMenu::armorMenu() {
@@ -132,6 +148,21 @@ void ShopMenu::armorMenu() {
 
   createArmorList();
   cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+
+  int armorChoice;
+  string type = "armor";
+
+  cin >> armorChoice;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (armorChoice <= 0 || armorChoice > NUM_ARMOR) {
+    cout << "Invalid item" << endl;
+  }
+  else {
+    buy(player, armorChoice, type);
+  }
 }
 
 void ShopMenu::weaponMenu() {
