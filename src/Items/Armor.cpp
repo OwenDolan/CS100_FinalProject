@@ -1,5 +1,5 @@
-#include "Item.h"
-#include "Armor.h"
+#include "../../header/Items/Item.h"
+#include "../../header/Items/Armor.h"
 
 #include <iostream>
 #include <string>

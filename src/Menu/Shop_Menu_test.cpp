@@ -15,7 +15,7 @@ int main() {
     Character* player = new Farmer(100, 100, 100, 100);
     player->setCurrency(1000);
     ShopMenu shop = ShopMenu(player);
-    shop.print();
+    player = shop.print();
 
     return 0;
 }

@@ -18,7 +18,7 @@ const int NUM_ARMOR = 9;
 class ShopMenu: public Menu {
   public:
     ShopMenu(Character*);
-    void print();
+    Character* print();
     void buy(Character*, int, string);
     Item* sell();
   private:

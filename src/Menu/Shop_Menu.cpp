@@ -1,9 +1,9 @@
-#include "../header/Menu/Shop_Menu.h"
-#include "../header/Characters/Character.h"
-#include "../header/Items/Item.h"
-#include "../header/Items/Healing.h"
-#include "../header/Items/Weapon.h"
-#include "../header/Items/Armor.h"
+#include "../../header/Menu/Shop_Menu.h"
+#include "../../header/Characters/Character.h"
+#include "../../header/Items/Item.h"
+#include "../../header/Items/Healing.h"
+#include "../../header/Items/Weapon.h"
+#include "../../header/Items/Armor.h"
 
 #include <iostream>
 #include <vector>
@@ -15,7 +15,7 @@ ShopMenu::ShopMenu(Character* player) {
   this->player = player;
 }
 
-void ShopMenu::print() {
+Character* ShopMenu::print() {
   cout << "  ------------------------" << endl;
   cout << " |  Welcome to the shop!  | " << endl;
   cout << "  ------------------------" << endl;
@@ -37,21 +37,24 @@ void ShopMenu::print() {
   }
 
   cout << "You left the store" << endl;
+
+  return this->player;
 }
+
 void ShopMenu::buy(Character* player, int item, string t) {
   int currentCurrency = player->getCurrency();
 
   if (t == "weapon") {
-    new Weapon newItem = Weapon(item);
+    Weapon* newItem = new Weapon(item);
   }
   else if (t == "armor") {
-    new Armor newItem = Armor(item);
+    Armor* newItem = new Armor(item);
   }
   else {
-    new Healing newItem = Healing(item);
+    Healing* newItem = new Healing(item);
   }
 
-  if (player->getCurrency() >= newItem->getPrice()) {              /*price check */
+ /* if (player->getCurrency() >= newItem->getPrice()) {              price check *
     player->addInventory(newItem);
     currentCurrency = currentCurrency - newItem->getPrice() - 50;
     player->setCurrency(currentCurrency);
@@ -60,10 +63,11 @@ void ShopMenu::buy(Character* player, int item, string t) {
     newItem->printItemName();
     cout << endl;
   }
+
   else {
-    cout << "You don't have enough Okra to buy thhis item"
-    delete newItem;
-  }
+    cout << "You don't have enough Okra to buy this item" << endl;
+   // delete newItem;
+  }*/
 }
 
 string ShopMenu::menu() {

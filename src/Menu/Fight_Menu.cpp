@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-void Fight_Menu::print() { //prints encounter prompt and displays actions
+Character* Fight_Menu::print() { //prints encounter prompt and displays actions
     cout << "You've encountered a wild <insert enemy here>" << endl;
     bool battle = true;
     int enemyHealth = 100;
@@ -55,6 +55,8 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
             cout << "Enemy has " << enemyHealth << " hp left." << endl;
         }
     }
+
+    return this->player;
 }
 int Fight_Menu::basicAttack() { //gets damage from character class
     return 10; //change later to interact with character class
