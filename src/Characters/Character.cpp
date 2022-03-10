@@ -1,4 +1,4 @@
-#include "Character.h"
+#include "../../header/Characters/Character.h"
 
 using namespace std;
 
@@ -59,10 +59,4 @@ vector<Item*> Character::getInventory() {
 
 void Character::addInventory(Item *i) {
 	inventory.push_back(i);
-}
-
-void Character::removeFromInventory(Item* i) {
-	vector<Item*>::iterator it = find(inventory.begin(), inventory.end(), i);
-	int index = distance(inventory.begin(), it);
-	inventory.erase(inventory.begin() + index);
 }

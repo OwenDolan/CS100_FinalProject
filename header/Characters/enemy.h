@@ -9,10 +9,9 @@ class enemy: public Character {
 private:
 	string enemySpecialName;
 public:
-	enemy(int h, int s, int d, int a)
-		:base(h, s, d, a)
-	{}
-	int enemySpecial1();
+	enemy(int h, int s, int d, int a);
+	int specialSkill();
+	int basicAtk();
 	string getSkillName();
 
 };

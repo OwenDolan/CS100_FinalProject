@@ -1,12 +1,16 @@
-#include "Farmer.h"
+#include "../../header/Characters/Farmer.h"
 
 using namespace std;
+
+Farmer::Farmer(int h, int s, int d, int a)
+	:Character(h, s, d, a)
+{}
 
 int Farmer::basicAtk() {
 	return 5;
 }
 
-void Farmer::infiniteattack() {
+void Farmer::infiniteAttack() {
 	this->setAtk(10000);
 }
 
@@ -18,18 +22,10 @@ void Farmer::infiniteDefense() {
 	this->setDefense(100000);
 }
 
-void Farmer::infiniteMP() {
-	this->setMP(100000);
-}
 
-int Farmer::farmerSpecial1() {
+int Farmer::specialSkill() {
 	farmerSpecialName = "Sickle Slash";
 	return 1;
-}
-
-void Farmer::farmerSpecial2() {
-	farmerSpecialName = "Grow Food";
-	return 0;
 }
 
 string Farmer::getSkillName() {

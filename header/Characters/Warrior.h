@@ -6,16 +6,13 @@ using namespace std;
 
 class Warrior : public Character {
 private:
-	bool bloodLustActive = false;
-	bool fatigue = false;
+
 	string warriorSpecialName;
 
 public:
-	Warrior(int h, int s, int d, int a)
-		:base(h, s, d, a)
-	{}
-	int warriorSpecial1();
-	int warriorSpecial2();
+	Warrior(int h, int s, int d, int a);
+	int specialSkill();
+	int basicAtk();
 	string getSkillName();
 };
 
