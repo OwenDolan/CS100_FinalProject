@@ -3,9 +3,13 @@
 
 using namespace std;
 
-EventScene::EventScene(string d, string s, vector<Item*> i) : Scene(d, s) { itemList = i; }
+EventScene::EventScene(string d, string s, Menu* m, vector<Item*> i) : Scene(d, s, m) { itemList = i; }
 
-EventScene::~EventScene() { }
+EventScene::~EventScene() {
+    for(int i = 0; i < itemList.size(); ++i) {
+	delete itemList.at(i);
+    }
+}
 
 void EventScene::outputDescrip() { cout << descrip << endl; }
 

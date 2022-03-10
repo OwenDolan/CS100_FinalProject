@@ -11,13 +11,9 @@ private:
 	
 public:
 
-	Mage(int h, int s, int d, int a)
-		:base(h, s, d, a)
-	{}
-	int basicAtk();	
-	int mageSpecial1();
-	int mageSpecial2();
-	int mageSpecial3();
+	Mage(int h, int s, int d, int a);
+	int basicAtk();
+	int specialSkill();
 	string getSkillName();
 
 };
