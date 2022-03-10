@@ -1,4 +1,5 @@
-//
+
+
 //  main.cpp
 //  FinalProject
 //
@@ -19,23 +20,23 @@
 
 using namespace std;
 
-Character* player;
+Character*  player;
 
 void choosePlayer(int choice) {
     if (choice == 1) {
-        player = new Archer();
+        player = new Archer(10,10,10,10);
     }
     else if (choice == 2) {
-        player = new Warrior();
+        player = new Warrior(15, 10, 10, 15);
     }
     else if (choice == 3) {
-        player = new Mage();
+        player = new Mage(10, 5, 5, 25);
     }
     else if (choice == 4) {
-        player = new Paladin();
+        player = new Paladin(20, 5, 20, 5);
     }
     else if (choice == 5) {
-        player = new Farmer();
+        player = new Farmer(1, 1, 1, 1);
     }
     else {
         cout << "invalid input received, restart game :) " << endl;
@@ -49,7 +50,7 @@ int main(int argc, const char * argv[]) {
     int playerChoice = begin.chooseCharacter();
     choosePlayer(playerChoice);
     Item* i = new Healing(1);
-    player->addToInventory(i);
+    player->addInventory(i);
     Fight_Menu fight(player);
     fight.print();
     delete player;

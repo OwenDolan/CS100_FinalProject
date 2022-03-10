@@ -10,16 +10,14 @@ private:
 	string farmerSpecialName;
 
 public:
-	Farmer(int h, int s, int d, int a)
-		:base(h, s, d, a)
-	{}
+	Farmer(int h, int s, int d, int a);
 	void infiniteAttack();
 	void infiniteHealth();
 	void infiniteDefense();
 	void infiniteMP();
-	int farmerSpecial1();
-	int farmerSpecial2();
+	int specialSkill();
+	int basicAtk();
 	string getSkillName();
-}
+};
 
 #endif
