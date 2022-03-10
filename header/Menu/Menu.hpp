@@ -11,11 +11,11 @@
 #pragma once
 
 #include <stdio.h>
-
+#include "../Characters/Character.h"
 #endif /* menu_hpp */
 class Menu {
 
 public:
-    virtual void print() = 0; // pure virtual to be implemented in derived classes
+    virtual Character* print() = 0; // pure virtual to be implemented in derived classes
     
 };

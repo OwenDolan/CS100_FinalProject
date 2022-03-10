@@ -17,7 +17,7 @@ void Main_Menu::speedUpButton() { //speed up how fast text is displayed to scree
 }
 
 
-void Main_Menu::print() { //prints welcome message and menu options
+Character* Main_Menu::print() { //prints welcome message and menu options
     char option;
     cout << "Welcome to <insert game title here> " << endl;
     cout << "e - Enter game " << endl;
@@ -35,6 +35,8 @@ void Main_Menu::print() { //prints welcome message and menu options
     else if (option == 'q') {
         exit();
     }
+    Character* chara;
+    return chara; // fix later to implement character selection
 }
 void Main_Menu::exit() { //needs to call destructor and confirms exit
     cout << "goodbye" << endl;

@@ -32,6 +32,7 @@ public:
 //	maybe setName?
 	vector<Item*>& returnInventory();
 	void addToInventory(Item* i);
+	void removeFromInventory(Item* i);
 
 
 	
