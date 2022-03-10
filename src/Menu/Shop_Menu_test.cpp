@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
 
-    Character* player = new Farmer();
+    Character* player = new Farmer(100, 100, 100, 100);
     player->setCurrency(1000);
     ShopMenu shop = ShopMenu(player);
     shop.print();
