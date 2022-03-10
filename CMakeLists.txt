@@ -26,6 +26,13 @@ ADD_EXECUTABLE(test
     tests/unit_test.cpp
     src/Scene/scene.cpp
     src/Scene/eventscene.cpp
+    src/Characters/Character.cpp
+    src/Characters/enemy.cpp
+    src/Characters/Farmer.cpp
+    src/Characters/Paladin.cpp
+    src/Characters/Warrior.cpp
+    src/Characters/Mage.cpp
+    src/Characters/Archer.cpp
 )
 
 
