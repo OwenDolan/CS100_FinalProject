@@ -20,7 +20,7 @@ int main() {
 
     vector<Item*> inv = player->getInventory();
 
-    for (int i = 0; i <= inv.size() - 1; ++i) {
+    for (int i = 0; i < inv.size(); ++i) {
 	inv.at(i)->printItemName();
     }
 

@@ -63,11 +63,17 @@ Armor::Armor(int itemNum) {
       damageReduction = 1000;
       price = 1000;
       break;
+    default:
+      itemName = "Antique Armor";
+      description = "A piece of very ornate armor. Useless for defense but it looks like it will sell for a good price.";
+      damageReduction = 0;
+      price = 250;
+      break;
   }
 
   useable = false;
   equipable = true;
-  deleteable = true;
+  deletable = true;
 }
 
 int Armor::getDamageReduction() {

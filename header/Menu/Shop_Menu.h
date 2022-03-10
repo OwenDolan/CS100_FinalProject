@@ -20,7 +20,7 @@ class ShopMenu: public Menu {
     ShopMenu(Character*);
     Character* print();
     void buy(Character*, int, string);
-    Item* sell();
+    void sell(Character*);
   private:
     Character* player;
     /*Helper functions*/

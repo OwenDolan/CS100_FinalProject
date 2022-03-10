@@ -16,3 +16,16 @@ void Item::printDescription() {
 int Item::getPrice() {
   return price;
 }
+
+bool Item::getUseable() {
+  return useable;
+}
+
+bool Item::getEquipable() {
+  return equipable;
+}
+
+bool Item::getDeletable() {
+  return deletable;
+}
+

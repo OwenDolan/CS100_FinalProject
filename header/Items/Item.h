@@ -12,13 +12,16 @@ class Item {
     void printItemName();
     void printDescription();
     int getPrice();
+    bool getUseable();
+    bool getEquipable();
+    bool getDeletable();
   protected:
     string itemName;
     string description;
     int price;
     bool useable;
     bool equipable;
-    bool deleteable;
+    bool deletable;
 };
 
 #endif

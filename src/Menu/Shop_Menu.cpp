@@ -27,7 +27,7 @@ Character* ShopMenu::print() {
       itemMenu();
     }
     else if (userInput == "sell") {
-      cout << "*IMPLEMENT SELL FUNCTION (need storage menu class)*" << endl;
+      sell(this->player);
     }
     else {
       cout << "Invalid input, please try again" << endl;
@@ -64,10 +64,75 @@ void ShopMenu::buy(Character* player, int item, string t) {
     newItem->printItemName();
     cout << endl;
   }
-
   else {
     cout << "You don't have enough Okra to buy this item" << endl;
     delete newItem;
+  }
+}
+
+void ShopMenu::sell(Character* player) {
+  cout << "  -----------------  " << endl;
+  cout << " |    INVENTORY    | " << endl;
+  cout << "  -----------------  " << endl;
+
+  int currentCurrency = player->getCurrency();
+
+  if (player->getInventory().size() == 0) {
+    cout << "Your inventory is empty! There's nothing to sell" << endl;
+    return;
+  }
+
+  for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
+    cout << i+1 << ". ";
+    player->getInventory().at(i)->printItemName();
+  }
+
+  cout << "What would you like to sell?" << endl;
+  cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+
+  int sellChoice;
+  cin >> sellChoice;;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (sellChoice == 0 || sellChoice > player->getInventory().size()) {
+    cout << "Invalid choice" << endl;
+  }
+  else if (player->getInventory().at(sellChoice-1)->getDeletable() == false) {
+    cout << "You cannot sell that item" << endl;
+  }
+  else {
+    cout << "You sold the ";
+    player->getInventory().at(sellChoice-1)->printItemName();
+    cout << "for " << player->getInventory().at(sellChoice-1)->getPrice() << " Okra" << endl;
+
+    delete player->getInventory()[sellChoice-1];
+    player->getInventory().erase(player->getInventory().begin() + (sellChoice - 1));
+    
+    /*for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
+	if (i == (sellChoice - 1)) {
+	    delete 
+        }
+    }*/
+
+    /*vector<Item*>:: iterator i;
+    for (i = player->getInventory().begin(); i != player->getInventory().end(); ++i) {
+	if (i == player->getInventory().begin() + (sellChoice- 1)) {
+	    delete player->getInventory();
+	    player->getInventory().erase(i);	
+	}
+    }*/  	
+    //delete player->getInventory()[sellChoice - 1];
+    //player->getInventory().at(vectorLoc) = nullptr;
+    //delete player->getInventory().at(vectorLoc);
+    //player->getInventory().erase(iterator.begin() + (sellChoice - 1));
+    //player->getInventory().at(sellChoice-1) = nullptr;
+  }
+
+  for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
+    cout << i+1 << ". ";
+    player->getInventory().at(i)->printItemName();
   }
 }
 
