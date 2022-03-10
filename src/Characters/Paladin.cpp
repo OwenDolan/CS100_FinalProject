@@ -1,4 +1,4 @@
-#include "Paladin.h"
+#include "../../header/Characters/Paladin.h"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int Paladin::basicAtk() {
 	return 5;
 }
 
-int Paladin::specialSkil1() {
+int Paladin::specialSkill() {
 	paladinSpecialName = "Tide Caller";
 	this->setDefense(this->getDefense() + 5);
 	return 5;

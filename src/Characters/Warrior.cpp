@@ -1,4 +1,4 @@
-#include "Warrior.h"
+#include "../../header/Characters/Warrior.h"
 
 using namespace std;
 
@@ -9,7 +9,7 @@ Warrior::Warrior(int h, int s, int d, int a)
 int Warrior::basicAtk() {
 	return 5;
 }
-int Warrior::specialSkil1() {
+int Warrior::specialSkill() {
 	warriorSpecialName = "Resonant Smash";
 	return 5;
 }

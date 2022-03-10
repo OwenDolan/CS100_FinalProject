@@ -12,6 +12,12 @@ ADD_EXECUTABLE(game
     src/Menu/Main_Menu.cpp
     src/Menu/Fight_Menu.cpp
     src/Characters/Character.cpp
+    src/Characters/enemy.cpp
+    src/Characters/Farmer.cpp
+    src/Characters/Paladin.cpp
+    src/Characters/Warrior.cpp
+    src/Characters/Mage.cpp
+    src/Characters/Archer.cpp
     src/Items/Item.cpp
     src/Items/Healing.cpp
 )

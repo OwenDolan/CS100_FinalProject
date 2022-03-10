@@ -14,7 +14,6 @@ public:
 	void infiniteAttack();
 	void infiniteHealth();
 	void infiniteDefense();
-	void infiniteMP();
 	int specialSkill();
 	int basicAtk();
 	string getSkillName();

@@ -31,7 +31,7 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
                 damage = specialAttack();
             }
             else if (attackMove == 3) {
-                vector<Item*> inventory = player->returnInventory();
+                vector<Item*> inventory = player->getInventory();
                 for (int i = 0; i < inventory.size(); i++) {
                     inventory.at(i)->printItemName();
                 }

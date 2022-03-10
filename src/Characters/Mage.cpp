@@ -1,4 +1,4 @@
-#include "Mage.h"
+#include "../../header/Characters/Mage.h"
 
 using namespace std;
 
@@ -11,7 +11,7 @@ int Mage::basicAtk() {
 	return 5;
 }
 
-int Mage::specialSkill {
+int Mage::specialSkill() {
 	mageSpecialName = "Fire Ball";
 	return 10;
 }
