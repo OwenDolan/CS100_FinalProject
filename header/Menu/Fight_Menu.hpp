@@ -26,4 +26,5 @@ public:
     void run(); //leave encounter
     //can add more functions like use item 
     Character* returnPlayer(); //to be called at conclusion of fight to update player
+    int chooseCharacter(); //Not actually implemented
 };

@@ -17,5 +17,5 @@ class Menu {
 
 public:
     virtual void print() = 0; // pure virtual to be implemented in derived classes
-    
+    virtual int chooseCharacter() = 0;
 };

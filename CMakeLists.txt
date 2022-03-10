@@ -14,12 +14,16 @@ ADD_EXECUTABLE(game
     src/Characters/Character.cpp
     src/Items/Item.cpp
     src/Items/Healing.cpp
+    src/Scene/scene.cpp
+    src/Scene/eventscene.cpp
 )
 
 ADD_EXECUTABLE(test
     tests/unit_test.cpp
     src/Scene/scene.cpp
     src/Scene/eventscene.cpp
+    src/Menu/Menu.cpp
+    src/Menu/Main_Menu.cpp
 )
 
 
