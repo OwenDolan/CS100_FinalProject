@@ -25,7 +25,7 @@ public:
 	int getDefense();
 	int getAtk();
 	int getCurrency();
-	vector<Item*> getInventory();
+	vector<Item*> &getInventory();
 	void addInventory(Item *i);
 	void setCurrency(int newCurrency);
 	void setSpeed(int newSpeed);
