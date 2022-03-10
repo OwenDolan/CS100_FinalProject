@@ -6,14 +6,20 @@ using namespace std;
 
 
 class Farmer: public Character{
+private:
+	string farmerSpecialName;
+
 public:
-//	void infiniteMoney();
+	Farmer(int h, int s, int d, int a)
+		:base(h, s, d, a)
+	{}
 	void infiniteAttack();
 	void infiniteHealth();
 	void infiniteDefense();
 	void infiniteMP();
-	void sickleSlash();
-	void growFood();
-};
+	int farmerSpecial1();
+	int farmerSpecial2();
+	string getSkillName();
+}
 
 #endif

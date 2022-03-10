@@ -1,33 +1,28 @@
 #ifndef SCENE_H
 #define SCENE_H
 #include <iostream>
+#include "../Menu/Menu.hpp"
 
 using namespace std;
 
 class Scene {
 
- private:
-    Scene* farLeft;
-    Scene* midLeft;
-    Scene* midRight;
-    Scene* farRight;
+ protected:
     string descrip;
     string introStory;
+    int loc; // meant to determine index of obj in scenelist
+    Menu* menu;
 
  public:
-    Scene(string);
-    ~Scene();
-    Scene* getFarLeft();
-    Scene* getMidLeft();
-    Scene* getMidRight();
-    Scene* getFarRight();
-    string getDescrip();
+    Scene(string, string, Menu*);
+    virtual ~Scene();
     void setDescrip(string);
     void setIntroStory(string);
-    void setFarLeft(Scene*);
-    void setMidLeft(Scene*);
-    void setMidRight(Scene*);
-    void setFarRight(Scene*);
+    void setLoc(int);
+    int getLoc();
+    Menu* getMenu();
+    string getDescrip();
+    string getIntroStory();
     virtual void outputDescrip() = 0;
     virtual void outputIntroStory() = 0;
 };

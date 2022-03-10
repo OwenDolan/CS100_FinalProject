@@ -3,49 +3,18 @@
 
 using namespace std;
 
-SceneList::SceneList() {
-    head = nullptr;
-    tail = nullptr;
-    curr = nullptr;
-}
+SceneList::SceneList() { }
 
 SceneList::~SceneList() {
-    destroyRecursive(head);
-}
-
-void SceneList::destroyRecursive(Scene* ptr) {
-    if (ptr) {
-        destroyRecursive(ptr->getFarLeft());
-        destroyRecursive(ptr->getMidLeft());
-        destroyRecursive(ptr->getMidRight());
-        destroyRecursive(ptr->getFarRight());
-        delete ptr;
+    for (int i = 0; i < list.size(); ++i) {
+        delete list.at(i);
     }
 }
 
 void SceneList::insert(Scene* loc, Scene* node) {
-    if(loc->getFarLeft() == nullptr) {
-        loc->setFarLeft(node);
-    }
-    else if(loc->getMidLeft() == nullptr) {
-        loc->setMidLeft(node);
-    }
-    else if (loc->getMidRight() == nullptr) {
-        loc->setMidRight(node);
-    }
-    else if (loc->getFarRight() == nullptr) {
-        loc->setFarRight(node);
-    }
-    else {
-        cout << "Unable to insert node" << endl;
-    }
+    list.push_back(ptr);
+    ptr->setLoc(list.size()-1);
 }
-
-Scene* SceneList::getHead() { return head; }
-
-Scene* SceneList::getTail() { return tail; }
-
-Scene* SceneList::getCurr() { return curr; }
 
 void SceneList::progressStory() {
     //Need to implement with menus

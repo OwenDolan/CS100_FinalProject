@@ -2,18 +2,28 @@
 
 using namespace std;
 
-void Mage::setMageMP(int value) {
-	this->setMP(value);
+
+int Mage::basicAtk() {
+	return 5;
 }
 
-void Mage::fireBlast() {
-	//..	
+int Mage::mageSpecial1() {
+	mageSpecialName = "Fire Ball";
+	return 10;
 }
 
-void Mage::icyWind() {
-	//..	
+int Mage::mageSpecial2() {
+	mageSpecialName = "Icy Wind";
+	return 10;
 }
 
-void Mage::lightningRose() {
-	//..	
+int Mage::mageSpecial3() {
+	mageSpecialName = "Lightning Rose";
+	return 10;
 }
+
+
+string Mage::getSkillName() {
+	return mageSpecialName;
+}
+

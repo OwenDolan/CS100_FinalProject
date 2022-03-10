@@ -16,6 +16,11 @@
 class Menu {
 
 public:
+<<<<<<< HEAD
     virtual Character* print() = 0; // pure virtual to be implemented in derived classes
     
+=======
+    virtual void print() = 0; // pure virtual to be implemented in derived classes
+    virtual int chooseCharacter() = 0;
+>>>>>>> f109f61e44a865b791ba344a0147099c4a76cd17
 };

@@ -1,39 +1,29 @@
-#include "scene.h"
+#include "../../header/Scene/scene.h"
 #include <iostream>
 
 using namespace std;
 
-Scene::Scene(string d) {
+Scene::Scene(string d, string s, Menu* m) {
     descrip = d;
-    farLeft = nullptr;
-    midLeft = nullptr;
-    midRight = nullptr;
-    farRight = nullptr;
+    introStory =s;
+    loc = 0;
+    menu = m;
 }
 
 Scene::~Scene() {
-    delete farLeft;
-    delete midLeft;
-    delete midRight;
-    delete farRight;
+    delete menu;
 }
-
-Scene* Scene::getFarLeft() { return farLeft; }
-
-Scene* Scene::getMidLeft() { return midLeft; }
-
-Scene* Scene::getMidRight() { return midRight; }
-
-Scene* Scene::getFarRight() { return farRight; }
 
 void Scene::setDescrip(string a) { descrip = a; }
 
 void Scene::setIntroStory(string a) { introStory = a; }
 
-void Scene::setFarLeft(Scene* a) { farLeft = a; }
+void Scene::setLoc(int a) { loc = a; }
 
-void Scene::setMidLeft(Scene* a) { midLeft = a; }
+int Scene::getLoc() { return loc; }
 
-void Scene::setMidRight(Scene* a) { midRight = a; }
+Menu* Scene::getMenu() { return menu; }
 
-void Scene::setFarRight(Scene* a) { farRight = a; }
+string Scene::getDescrip() { return descrip; }
+
+string Scene::getIntroStory() { return introStory; }

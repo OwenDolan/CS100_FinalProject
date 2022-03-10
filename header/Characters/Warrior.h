@@ -8,11 +8,15 @@ class Warrior : public Character {
 private:
 	bool bloodLustActive = false;
 	bool fatigue = false;
+	string warriorSpecialName;
 
 public:
-	void setWarriorAttack(int value);
-	void resonantSmash();
-	void shieldBash();
+	Warrior(int h, int s, int d, int a)
+		:base(h, s, d, a)
+	{}
+	int warriorSpecial1();
+	int warriorSpecial2();
+	string getSkillName();
 };
 
 #endif
