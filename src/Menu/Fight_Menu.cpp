@@ -7,9 +7,11 @@
 
 #include "../../header/Menu/Fight_Menu.hpp"
 #include <iostream>
+#include <typeinfo>
+
 using namespace std;
 
-void Fight_Menu::print() { //prints encounter prompt and displays actions
+Character* Fight_Menu::print() { //prints encounter prompt and displays actions
     cout << "You've encountered a wild <insert enemy here>" << endl;
     bool battle = true;
     int enemyHealth = 100;
@@ -17,7 +19,7 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
     while (battle) {
         cout << "What's the move?: 1. Basic Attack, 2. Special Attack | 3. Check Inventory | 4. Use Item | 5. Run" << endl;
         cin >> attackMove;
-        if (cin.fail()) {
+        while (cin.fail()) {
             cout << "invalid input, try again" << endl;
             cin.clear();
             cin.ignore();
@@ -44,7 +46,7 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
                 cin.ignore();
                 cin >> item;
             }
-            vector<Item*> inventory = player->getInventory();
+            vector<Item*> inventory = player->returnInventory();
             Item* i = inventory.at(item);
             useItem(i);
         }
@@ -54,38 +56,16 @@ void Fight_Menu::print() { //prints encounter prompt and displays actions
             run();
         }
         else {
-            int damage = 0;
-            if (attackMove == 1) {
-                damage = basicAttack();
-            }
-            else if (attackMove == 2) {
-                damage = specialAttack();
-            }
-            else if (attackMove == 3) {
-                vector<Item*> inventory = player->getInventory();
-                for (int i = 0; i < inventory.size(); i++) {
-                    inventory.at(i)->printItemName();
-                }
-            }
-            else if (attackMove == 4) {
-                //use item
-            }
-            else if (attackMove == 5) {
-                battle = false;
-                cout << "You have sucessfully fled the encounter." << endl;
-                run();
-            }
-            else {
-                cout << "invalid input. You miss and " << flush;
-            }
-            cout << "You have dealt " << damage << " damage." << endl;
-            enemyHealth -= damage;
-            if (enemyHealth <= 0) {
-                battle = false;
-            }
-            cout << "Enemy has " << enemyHealth << " hp left." << endl;
+            cout << "invalid input. You miss and " << flush;
         }
+        cout << "You have dealt " << damage << " damage." << endl;
+        enemyHealth -= damage;
+        if (enemyHealth <= 0) {
+            battle = false;
+        }
+        cout << "Enemy has " << enemyHealth << " hp left." << endl;
     }
+    return returnPlayer();
 }
 int Fight_Menu::basicAttack() { //gets damage from character class
     return 10; //change later to interact with character class
@@ -107,3 +87,35 @@ Fight_Menu::Fight_Menu(Character* p) {
 Character* Fight_Menu::returnPlayer() {
     return player;
 }
+
+<<<<<<< HEAD
+void Fight_Menu::useItem(Item* i) {
+    string s = typeid(i).name();
+    if (dynamic_cast<Healing*> (i) != nullptr) {
+        Healing* heal = dynamic_cast<Healing*> (i);
+        int healing = heal->getHealAmount();
+        int prevHealth = player->getHealth();
+        player->setHealth(prevHealth += healing);
+        player->removeFromInventory(i);
+    }
+    /*
+    else if (dynamic_cast<Armor*> (i) != nullptr) {
+        Healing* heal = dynamic_cast<Healing*> (i);
+        int healing = heal->getHealAmount();
+        int prevHealth = player->getHealth();
+        player->setHealth(prevHealth += healing);
+    }
+    */
+}
+
+void Fight_Menu::checkInventory() {
+    vector<Item*> inventory = player->returnInventory();
+        for (int i = 0; i < inventory.size(); i++) {
+            int num = i;
+            cout << ++num << ". " << flush;
+            inventory.at(i)->printItemName();
+        }
+}
+=======
+int Fight_Menu::chooseCharacter() { return 0; }
+>>>>>>> f109f61e44a865b791ba344a0147099c4a76cd17
