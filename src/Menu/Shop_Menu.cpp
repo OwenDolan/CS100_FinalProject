@@ -88,7 +88,7 @@ void ShopMenu::sell(Character* player) {
   }
 
   cout << "What would you like to sell?" << endl;
-  cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+  cout << "*Tip: Type the number of the item you wish to sell*" << endl;
 
   int sellChoice;
   cin >> sellChoice;;
@@ -106,38 +106,18 @@ void ShopMenu::sell(Character* player) {
     cout << "You sold the ";
     player->getInventory().at(sellChoice-1)->printItemName();
     cout << "for " << player->getInventory().at(sellChoice-1)->getPrice() << " Okra" << endl;
+    currentCurrency += player->getInventory().at(sellChoice - 1)->getPrice();
 
     delete player->getInventory()[sellChoice-1];
     player->getInventory().erase(player->getInventory().begin() + (sellChoice - 1));
-    
-    /*for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
-	if (i == (sellChoice - 1)) {
-	    delete 
-        }
-    }*/
 
-    /*vector<Item*>:: iterator i;
-    for (i = player->getInventory().begin(); i != player->getInventory().end(); ++i) {
-	if (i == player->getInventory().begin() + (sellChoice- 1)) {
-	    delete player->getInventory();
-	    player->getInventory().erase(i);	
-	}
-    }*/  	
-    //delete player->getInventory()[sellChoice - 1];
-    //player->getInventory().at(vectorLoc) = nullptr;
-    //delete player->getInventory().at(vectorLoc);
-    //player->getInventory().erase(iterator.begin() + (sellChoice - 1));
-    //player->getInventory().at(sellChoice-1) = nullptr;
-  }
-
-  for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
-    cout << i+1 << ". ";
-    player->getInventory().at(i)->printItemName();
+    player->setCurrency(currentCurrency);
   }
 }
 
 string ShopMenu::menu() {
   string choice;
+  cout << "Currency: " << player->getCurrency() << " Okra" << endl;
   cout << "What would you like to do?" << endl;
   cout << " >Buy" << "   " << " >Sell" << "   " << " >Leave" << endl;
 
