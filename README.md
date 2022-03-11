@@ -42,7 +42,8 @@
  >  3. Run ./game.
  >  4. You are then first prompted to start a new game or quit.
  >  5. You are then prompted to choose which character to play.
- >  
+ >  6. *When prompted to typed all responses should be lowercase
+ 
  ## Screenshots
 ![image](https://user-images.githubusercontent.com/78832934/157957876-fa6ede8b-fec3-4ad0-9a6d-94604aca3fef.png)
 >(Running and starting the game, the starting scene along with prompt to start game)
@@ -61,6 +62,9 @@
 
 ![image](https://user-images.githubusercontent.com/78832934/157957941-7ec2374c-9799-4956-8260-b31b89997546.png)
 > (You can buy strong items to help you on your quest, using the currency (Okra) gained from enemy battles)
+
+![image](https://user-images.githubusercontent.com/57571556/157966629-3046f7c9-22cc-49c7-a7cd-19ecb3dc2993.png)
+> (You can sell the items in your inventory too)
 
 ![image](https://user-images.githubusercontent.com/78832934/157957983-8db0687d-2f26-4774-b7ce-5844fd771666.png)
 > (Once you leave the decision tree, you are back on your journey!)
