@@ -42,9 +42,10 @@
  
  ## Installation/Usage
  >  1. Download the file as a zip.
- >  2. Run ./game.
- >  3. You are then first prompted to start a new game or quit.
- >  4. You are then prompted to choose which character to play.
+ >  2. Run cmake3 . and make, to get the game executable. 
+ >  3. Run ./game.
+ >  4. You are then first prompted to start a new game or quit.
+ >  5. You are then prompted to choose which character to play.
  >  
  ## Screenshots
 ![image](https://user-images.githubusercontent.com/78832934/157957876-fa6ede8b-fec3-4ad0-9a6d-94604aca3fef.png)
