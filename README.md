@@ -77,6 +77,6 @@
  
 
  ## Testing
-We created google unit tests for different objects, for scene its different getter functions, making sure that it returns and constructs properly. For character we  tested to see the unique attack fucntions and special attacks for each different characters, making sure that the algorithms for the damage based on each characters special attack was correct. The shop test was functional and checked menu within its own environment, to see if formatting and functionality was working, and to make sure that it could interact with other other characters and items. We also used valgrind to make sure there were no memory leaks, using the full clean check function to make sure that ./game creates any memory leaks. 
+We created google unit tests for different objects, for scene its different getter functions, making sure that it returns and constructs properly. For character we tested to see the unique attack functions and special attacks for each of the different characters, making sure that the algorithms for the damage based on each characters special attack was correct. The shop test was functional and checked menu within its own environment, to see if formatting and functionality was working, and to make sure that it could interact with other other characters and items. We also used valgrind to make sure there were no memory leaks, using the full clean check function to make sure that ./game creates any memory leaks. 
 
  
