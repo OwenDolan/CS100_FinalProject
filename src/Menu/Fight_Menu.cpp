@@ -16,6 +16,7 @@ void Fight_Menu::initializeEnemy(enemy* e) {
 }
 
 Character* Fight_Menu::print() { //prints encounter prompt and displays actions
+
     cout << "You've encountered a wild " << enemie->enemyName << endl;
     bool battle = true;
     int enemyHealth = enemie->getHealth();

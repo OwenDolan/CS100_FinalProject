@@ -18,11 +18,9 @@ ADD_EXECUTABLE(game
     src/Characters/Mage.cpp
     src/Characters/Archer.cpp
     src/Items/Item.cpp
-    src/Items/Healing.cpp
     src/Menu/Shop_Menu.cpp
     src/Items/Armor.cpp
     src/Items/Healing.cpp
-    src/Items/Item.cpp
     src/Items/Weapon.cpp
 )
 
@@ -38,6 +36,11 @@ ADD_EXECUTABLE(test
     src/Characters/Warrior.cpp
     src/Characters/Mage.cpp
     src/Characters/Archer.cpp
+    src/Menu/Shop_Menu.cpp
+    src/Items/Item.cpp
+    src/Items/Healing.cpp
+    src/Items/Armor.cpp
+    src/Items/Weapon.cpp
 )
 
 ADD_EXECUTABLE(shop
