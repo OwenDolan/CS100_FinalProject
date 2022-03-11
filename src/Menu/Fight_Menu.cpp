@@ -12,7 +12,7 @@
 using namespace std;
 
 Character* Fight_Menu::print() { //prints encounter prompt and displays actions
-    cout << "You've encountered a wild <insert enemy here>" << endl;
+    cout << "You've encountered an enemy" << endl;
     bool battle = true;
     int enemyHealth = 100;
     int attackMove = 0;
