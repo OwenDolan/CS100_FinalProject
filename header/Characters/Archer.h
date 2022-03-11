@@ -7,16 +7,13 @@ using namespace std;
 class Archer : public Character {
 
 private: 
-	string element;
-    string arr[5] = {"fire","water","ice","lightning","wind"};
+	string archerSpecialName;
 
 public:
-	void setArcherAttack(int value);
-	void setElement(string newElement);
-	void setArcherSpeed(int value);
-	void rainOfArrows();
-	void elementalArrow();
-
+	Archer(int h, int s, int d, int a);
+	int specialSkill();
+        string getSkillName();
+	int basicAtk();
 };
 
 #endif

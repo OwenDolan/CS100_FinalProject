@@ -1,24 +1,19 @@
-#include "enemy.h"
+#include "../../header/Characters/enemy.h"
 
 using namespace std;
 
-void enemy::setEnemyAttack(int value) {
-	enemyAtk = value;
+enemy::enemy(int h, int s, int d, int a)
+	:Character(h, s, d, a)
+{}
+
+int enemy::basicAtk() {
+	return this->getAtk();
+}
+int enemy::specialSkill() {
+	enemySpecialName = "Wild Swing";
+	return this->getAtk() + 3;
 }
 
-void enemy::setEnemyHealth(int value) {
-	this->setHealth(value);
+string enemy::getSkillName() {
+	return enemySpecialName;
 }
-
-void enemy::setEnemyDefense(int value) {
-	this->setDefense(value);
-}
-
-void enemy::setEnemySpeed(int value) {
-	this->setSpeed(value);
-}
-
-void enemy::wildSwing() {
-	this->setAtk(enemyAtk + 5);
-	//.. attack somehow
-	}

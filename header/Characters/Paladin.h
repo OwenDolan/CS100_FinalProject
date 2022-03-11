@@ -4,13 +4,15 @@
 
 using namespace std;
 
-class Paladin:public Character {
+class Paladin: public Character {
+private:
+	string paladinSpecialName;
+
 public:
-	void setPaladinAttack(int value);
-	void setPaladinDefense(int value);
-	void tideCaller();// counterAttack
-	void partyProtect();// if time permits
-	void heal();
+	Paladin(int h, int s, int d, int a);
+	int specialSkill();
+	int basicAtk();
+	string getSkillName();
 };
 
 #endif

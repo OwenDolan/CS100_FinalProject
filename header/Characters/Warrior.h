@@ -6,13 +6,14 @@ using namespace std;
 
 class Warrior : public Character {
 private:
-	bool bloodLustActive = false;
-	bool fatigue = false;
+
+	string warriorSpecialName;
 
 public:
-	void setWarriorAttack(int value);
-	void resonantSmash();
-	void shieldBash();
+	Warrior(int h, int s, int d, int a);
+	int specialSkill();
+	int basicAtk();
+	string getSkillName();
 };
 
 #endif

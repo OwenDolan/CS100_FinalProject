@@ -17,9 +17,19 @@ void Main_Menu::speedUpButton() { //speed up how fast text is displayed to scree
 }
 
 
+/* Steven edit
 void Main_Menu::print() { //prints welcome message and menu options
+    char option = 'a';
+    cout << "Welcome to Vanguard\nPlease choose your input:\n " << endl;
+    cout << "e - Enter game (Reincarnate)" << endl;
+    cout << "q - exit game (Pass on and leave)" << endl;
+    while (option != 'e' && option != 'q') {
+        */
+
+
+Character* Main_Menu::print() { //prints welcome message and menu options
     char option;
-    cout << "Welcome to <insert game title here> " << endl;
+    cout << "Welcome to Vanguard" << endl;
     cout << "e - Enter game " << endl;
     cout << "q - exit game" << endl;
     cin >> option;
@@ -28,13 +38,19 @@ void Main_Menu::print() { //prints welcome message and menu options
         cin.clear();
         cin.ignore();
         cin >> option;
+
+        if (option == 'e') {
+            //go to next option
+        }
+        else if (option == 'q') {
+            exit();
+        }
+        else {
+	    cout << "Invalid input, try again or be stuck in purgatory" << endl;
+        }
     }
-    if (option == 'e') {
-        //go to next option
-    }
-    else if (option == 'q') {
-        exit();
-    }
+    Character* chara;
+    return chara; // fix later to implement character selection
 }
 void Main_Menu::exit() { //needs to call destructor and confirms exit
     cout << "goodbye" << endl;

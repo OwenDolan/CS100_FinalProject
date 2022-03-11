@@ -3,37 +3,26 @@
 
 #include "gtest/gtest.h"
 
-//#include "../header/Scene/scene.h"
-#include "../header/Scene/eventscene.h"
-#include "../header/Items/Item.h"
+#include "../header/Scene/reworkscene.hpp"
 
-TEST(SceneTest, TestConstructor) {
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", i);
-    EXPECT_EQ(scene->getLoc(), 0);
-    EXPECT_EQ(scene->getDescrip(), "You are here");
-    EXPECT_EQ(scene->getIntroStory(), "Welcome");
+TEST(SceneTest, TestDescrip) {
+    Character* p = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene1 = new GuildScene("Hey", "You're a rockstar", p); 
+    EXPECT_EQ(scene1->getDescrip(), "Hey");
 }
 
-TEST(SceneTest, TestSetIntro) {
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", i);
-    scene->setIntroStory("Welcome to the world of Vanguard, pick your character");
-    EXPECT_EQ(scene->getIntroStory(), "Welcome to the world of Vanguard, pick your character");
+TEST(SceneTest, TestStory) {
+    Character* a = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene2 = new GuildScene("Never gonna give you up", "Never gonna let you down", a);
+    EXPECT_EQ(scene2->getStory(), "Never gonna let you down");
 }
 
-TEST(SceneTest, TestSetDescrip) {
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", i);
-    scene->setDescrip("You wake up in front of a useless water goddess who seems to drink too much");
-    EXPECT_EQ(scene->getDescrip(), "You wake up in front of a useless water goddess who seems to drink too much");
-}
-
-TEST(SceneTest, TestSetLoc) {
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", i);
-    scene->setLoc(69);
-    EXPECT_EQ(scene->getLoc(), 69);
+TEST(SceneTest, TestPlayer) {
+    Character* e = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene3 = new GuildScene("Steppin on the beat", "du rut du du", e);
+    EXPECT_EQ(scene3->getPlayer(), e);
 }
 
 #endif
+
+

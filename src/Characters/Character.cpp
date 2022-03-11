@@ -2,44 +2,61 @@
 
 using namespace std;
 
+
+Character::Character(int h, int s, int d, int a) {
+	setHealth(h);
+	setSpeed(s);
+	setDefense(d);
+	setAtk(a);
+}
+
 int Character::getHealth() {
-	return this->health;
+	return health;
 
 }
 
-void Character::basicAtk() {
-//	does damage in some way
+int Character::getDefense() {
+	return defense;
 }
 
+int Character::getSpeed() {
+	return speed;
+}
+
+int Character::getAtk() {
+	return atk;
+}
+
+int Character::getCurrency() {
+	return currency;
+}
+
+void Character::setCurrency(int newCurrency) {
+	currency = newCurrency;
+}
 void Character::setSpeed(int newSpeed) {
-	this->speed = newSpeed;
+	speed = newSpeed;
 
 }
 
 void Character::setHealth(int newHealth) {
-	this->health = newHealth;
+	health = newHealth;
 }
 
 void Character::setAtk(int newAtk) {
-	this->atk = newAtk;
+	atk = newAtk;
 }
-/*
-void Character::setCurrency(int newCurrency) {
-//	i cant access currency, have to figure that out
-}
-*/
+
+
+
 void Character::setDefense(int newDefense) {
-	this->defense = newDefense;
+	defense = newDefense;
 }
 
-void Character::setMP(int newMP) {
-	this->MP = newMP;
-}
-
-vector<Item*>& Character::returnInventory() {
+vector<Item*>& Character::getInventory() {
 	return inventory;
 }
 
-void Character::addToInventory(Item* i) {
+void Character::addInventory(Item *i) {
 	inventory.push_back(i);
 }

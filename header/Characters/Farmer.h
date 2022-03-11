@@ -6,14 +6,17 @@ using namespace std;
 
 
 class Farmer: public Character{
+private:
+	string farmerSpecialName;
+
 public:
-//	void infiniteMoney();
+	Farmer(int h, int s, int d, int a);
 	void infiniteAttack();
 	void infiniteHealth();
 	void infiniteDefense();
-	void infiniteMP();
-	void sickleSlash();
-	void growFood();
+	int specialSkill();
+	int basicAtk();
+	string getSkillName();
 };
 
 #endif

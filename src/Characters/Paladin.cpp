@@ -1,26 +1,23 @@
-#include "Paladin.h"
+#include "../../header/Characters/Paladin.h"
 
 using namespace std;
 
-void Paladin::setPaladinAttack(int value) {
-	this->setAtk(value);
+Paladin::Paladin(int h, int s, int d, int a)
+	:Character(h, s, d, a)
+{}
+
+int Paladin::basicAtk() {
+	return this->getAtk();
 }
 
-void Paladin::setPaladinDefense(int value) {
-	this->setDefense(value);
+int Paladin::specialSkill() {
+	paladinSpecialName = "Tide Caller";
+	this->setDefense(this->getDefense() + 5);
+	return this->getAtk() +  5;
 }
 
-void Paladin::tideCaller() {
-	//..
-}
 
-//void Paladin::partyProtect() {
-//
-//}
+string Paladin::getSkillName() {
+	return paladinSpecialName;
 
-void Paladin::heal() {
-	int currentHealth = this->getHealth();
-	int newHealth = currentHealth + 100;
-	this->setHealth(newHealth);
-	
 }

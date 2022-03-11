@@ -1,17 +1,19 @@
-#include "Warrior.h"
+#include "../../header/Characters/Warrior.h"
 
 using namespace std;
 
-void Warrior::setWarriorAttack(int value) {
-	this->setAtk(value);
+Warrior::Warrior(int h, int s, int d, int a)
+	:Character(h, s, d, a)
+{}
+
+int Warrior::basicAtk() {
+	return this->getAtk();
+}
+int Warrior::specialSkill() {
+	warriorSpecialName = "Resonant Smash";
+	return this->getAtk() + 5;
 }
 
-void Warrior::resonantSmash() {
-	bloodLustActive = true;
-	fatigue = true;
-}
-
-void Warrior::shieldBash() {
-	this->setDefense(0);
-	this->setAtk(100); // or something a lot higher
+string Warrior::getSkillName() {
+	return warriorSpecialName;
 }

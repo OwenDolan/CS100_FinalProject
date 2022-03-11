@@ -1,19 +1,22 @@
-#include "Mage.h"
+#include "../../header/Characters/Mage.h"
 
 using namespace std;
 
-void Mage::setMageMP(int value) {
-	this->setMP(value);
+
+Mage::Mage(int h, int s, int d, int a)
+	:Character(h, s, d, a)
+{}
+
+int Mage::basicAtk() {
+	return this->getAtk();
 }
 
-void Mage::fireBlast() {
-	//..	
+int Mage::specialSkill() {
+	mageSpecialName = "Fire Ball";
+	return this->getAtk() + 10;
 }
 
-void Mage::icyWind() {
-	//..	
+string Mage::getSkillName() {
+	return mageSpecialName;
 }
 
-void Mage::lightningRose() {
-	//..	
-}
