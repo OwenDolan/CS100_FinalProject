@@ -31,22 +31,19 @@
   * For our project, the strategy pattern has been chosen to help the Scene class and the implementation of a menu. Our player will need to interact with each Scene within our game, although the type of scene would lead to a different type of menu. An example being that an event scene would need the player to choose between a decision while a fight scene would constantly have the player looping over attack or item usage decisions till the player or enemies are killed. These are two varying algorithms and to have the possibility of expansion with other type of scenes without needing to constantly go back and change each scene, the use of a menu item will do the job of interacting and return the decision of the player to progress the story.
 
  
- > ## Final deliverable
- > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
-
->
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
+ ## Final deliverable
+ Updated UML Diagram
  
+ ![Final UML](https://user-images.githubusercontent.com/97153990/157966192-54c96e92-19e3-459d-b575-4a69889e4069.png)
+
  ## Installation/Usage
  >  1. Download the file as a zip.
  >  2. Run cmake3 . and make, to get the game executable. 
  >  3. Run ./game.
  >  4. You are then first prompted to start a new game or quit.
  >  5. You are then prompted to choose which character to play.
- >  
+ >  6. *When prompted to typed all responses should be lowercase
+ 
  ## Screenshots
 ![image](https://user-images.githubusercontent.com/78832934/157957876-fa6ede8b-fec3-4ad0-9a6d-94604aca3fef.png)
 >(Running and starting the game, the starting scene along with prompt to start game)
@@ -66,6 +63,9 @@
 ![image](https://user-images.githubusercontent.com/78832934/157957941-7ec2374c-9799-4956-8260-b31b89997546.png)
 > (You can buy strong items to help you on your quest, using the currency (Okra) gained from enemy battles)
 
+![image](https://user-images.githubusercontent.com/57571556/157966629-3046f7c9-22cc-49c7-a7cd-19ecb3dc2993.png)
+> (You can sell the items in your inventory too)
+
 ![image](https://user-images.githubusercontent.com/78832934/157957983-8db0687d-2f26-4774-b7ce-5844fd771666.png)
 > (Once you leave the decision tree, you are back on your journey!)
 
@@ -77,6 +77,6 @@
  
 
  ## Testing
-We created google unit tests for different objects, for scene its different getter functions, making sure that it returns and constructs properly. For character we  tested to see the unique attack fucntions and special attacks for each different characters, making sure that the algorithms for the damage based on each characters special attack was correct. The shop test was functional and checked menu within its own environment, to see if formatting and functionality was working, and to make sure that it could interact with other other characters and items. We also used valgrind to make sure there were no memory leaks, using the full clean check function to make sure that ./game creates any memory leaks. 
+We created google unit tests for different objects, for scene its different getter functions, making sure that it returns and constructs properly. For character we tested to see the unique attack functions and special attacks for each of the different characters, making sure that the algorithms for the damage based on each characters special attack was correct. The shop test was functional and checked menu within its own environment, to see if formatting and functionality was working, and to make sure that it could interact with other other characters and items. We also used valgrind to make sure there were no memory leaks, using the full clean check function to make sure that ./game creates any memory leaks. 
 
  
