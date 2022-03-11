@@ -3,42 +3,26 @@
 
 #include "gtest/gtest.h"
 
-#include "../header/Scene/eventscene.h"
-#include "../header/Items/Item.h"
-#include "../header/Menu/Main_Menu.hpp"
+#include "../header/Scene/reworkscene.hpp"
 
-TEST(SceneTest, TestConstructor) {
-    Menu* m = new Main_Menu();
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", m, i);
-    EXPECT_EQ(scene->getLoc(), 0);
-    EXPECT_EQ(scene->getDescrip(), "You are here");
-    EXPECT_EQ(scene->getIntroStory(), "Welcome");
-    EXPECT_EQ(scene->getMenu(), m);
+TEST(SceneTest, TestDescrip) {
+    Character* p = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene1 = new GuildScene("Hey", "You're a rockstar", p); 
+    EXPECT_EQ(scene1->getDescrip(), "Hey");
 }
 
-TEST(SceneTest, TestSetIntro) {
-    Menu* m = new Main_Menu();
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", m, i);
-    scene->setIntroStory("Welcome to the world of Vanguard, pick your character");
-    EXPECT_EQ(scene->getIntroStory(), "Welcome to the world of Vanguard, pick your character");
+TEST(SceneTest, TestStory) {
+    Character* a = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene2 = new GuildScene("Never gonna give you up", "Never gonna let you down", a);
+    EXPECT_EQ(scene2->getStory(), "Never gonna let you down");
 }
 
-TEST(SceneTest, TestSetDescrip) {
-    Menu* m = new Main_Menu();
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", m, i);
-    scene->setDescrip("You wake up in front of a useless water goddess who seems to drink too much");
-    EXPECT_EQ(scene->getDescrip(), "You wake up in front of a useless water goddess who seems to drink too much");
-}
-
-TEST(SceneTest, TestSetLoc) {
-    Menu* m = new Main_Menu();
-    vector<Item*> i;
-    Scene* scene = new EventScene("You are here", "Welcome", m, i);
-    scene->setLoc(69);
-    EXPECT_EQ(scene->getLoc(), 69);
+TEST(SceneTest, TestPlayer) {
+    Character* e = new Archer(0, 0 , 0 ,0);
+    GuildScene* scene3 = new GuildScene("Steppin on the beat", "du rut du du", e);
+    EXPECT_EQ(scene3->getPlayer(), e);
 }
 
 #endif
+
+
