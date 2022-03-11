@@ -7,7 +7,7 @@ Farmer::Farmer(int h, int s, int d, int a)
 {}
 
 int Farmer::basicAtk() {
-	return 5;
+	return this->getAtk();
 }
 
 void Farmer::infiniteAttack() {
@@ -25,7 +25,7 @@ void Farmer::infiniteDefense() {
 
 int Farmer::specialSkill() {
 	farmerSpecialName = "Sickle Slash";
-	return 1;
+	return this->getAtk() + 1;
 }
 
 string Farmer::getSkillName() {

@@ -7,13 +7,13 @@ Paladin::Paladin(int h, int s, int d, int a)
 {}
 
 int Paladin::basicAtk() {
-	return 5;
+	return this->getAtk();
 }
 
 int Paladin::specialSkill() {
 	paladinSpecialName = "Tide Caller";
 	this->setDefense(this->getDefense() + 5);
-	return 5;
+	return this->getAtk() +  5;
 }
 
 

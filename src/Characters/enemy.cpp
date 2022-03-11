@@ -7,11 +7,11 @@ enemy::enemy(int h, int s, int d, int a)
 {}
 
 int enemy::basicAtk() {
-	return 2;
+	return this->getAtk();
 }
 int enemy::specialSkill() {
 	enemySpecialName = "Wild Swing";
-	return 3;
+	return this->getAtk() + 3;
 }
 
 string enemy::getSkillName() {

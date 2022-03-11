@@ -8,12 +8,12 @@ Mage::Mage(int h, int s, int d, int a)
 {}
 
 int Mage::basicAtk() {
-	return 5;
+	return this->getAtk();
 }
 
 int Mage::specialSkill() {
 	mageSpecialName = "Fire Ball";
-	return 10;
+	return this->getAtk() + 10;
 }
 
 string Mage::getSkillName() {
