@@ -15,6 +15,7 @@ public:
 	int specialSkill();
 	int basicAtk();
 	string getSkillName();
-
+	int specialSkill1();
+	int specialSkill2();
 };
 #endif

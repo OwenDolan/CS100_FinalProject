@@ -69,20 +69,37 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
         enemyHealth -= damage;
         if (enemyHealth <= 0) {
             battle = false;
+            break;
         }
         cout << "Enemy has " << enemyHealth << " hp left." << endl;
 
-        int n = enemie->specialSkill();
+        if (enemie->enemyName == "Drunkard") {
+            int d = enemie->specialSkill();
+        }
+        else if (enemie->enemyName == "Griffin") {
+            int d = enemie->specialSkill1();
+
+        }
+        else {
+            int d = enemie->specialSkill2();
+
+        }
         cout << "Enemy attacks you with a " << enemie->enemy::getSkillName() << endl;
         if (enemie->getAtk() == 0) {
             cout << "He missed" << endl;
         }
         cout << "He deals " << enemie->getAtk() << " damage." << endl;
+        
+        int health = player->getHealth();
+        if(enemie->getAtk()-player->getDefense() >= 0) {
+            health -= enemie->getAtk()-player->getDefense();
+            player->setHealth(health);
+        }
+        else {
+            cout << "Your armor has absorbed the attack. You take no damage" << endl;
+        }
         cout << "You have " << player->getHealth() << " hp left." << endl;
 
-        int health = player->getHealth();
-        health -= enemie->getAtk();
-        player->setHealth(health);
         if (player->getHealth() <= 0) {
             battle = false;
             cout << "You died...rip" << endl;
@@ -105,9 +122,8 @@ void Fight_Menu::run() { //leave encounter
     //implement to return to a different scene
 }
 
-Fight_Menu::Fight_Menu(Character* p, int choice) {
+Fight_Menu::Fight_Menu(Character* p) {
     player = p;
-    ch = choice;
 }
 
 Character* Fight_Menu::returnPlayer() {
@@ -121,15 +137,19 @@ void Fight_Menu::useItem(Item* i, int index) {
         int prevHealth = player->getHealth();
         player->setHealth(prevHealth += healing);
         player->removeFromInventory(index);
+        cout << "You use the potion and gain " << healing << " HP." << endl;
     }
-    /*
+    else if (dynamic_cast<Weapon*> (i) != nullptr) {
+        Weapon* w = dynamic_cast<Weapon*> (i);
+        player->setAtk(player->getAtk() * w->getDamageModifier());
+        cout << "You now wield " << flush; w->printItemName(); cout << " your damage has increased by " << w->getDamageModifier() << "x." << endl;
+    }
     else if (dynamic_cast<Armor*> (i) != nullptr) {
-        Healing* heal = dynamic_cast<Healing*> (i);
-        int healing = heal->getHealAmount();
-        int prevHealth = player->getHealth();
-        player->setHealth(prevHealth += healing);
+        Armor* w = dynamic_cast<Armor*> (i);
+        player->setDefense(player->getDefense()+w->getDamageReduction());
+        cout << "You now don the " << flush; w->printItemName(); cout << " your defense has increased by " << w->getDamageReduction() << "." << endl;
     }
-    */
+    
 }
 
 void Fight_Menu::checkInventory() {

@@ -41,27 +41,6 @@ public:
 
 };
 
- void Scene::instantiatePlayer() {
-     if (ch == 1) {
-         dynamic_cast<Archer*>(player);
-     }
-     else if (ch == 2) {
-        dynamic_cast<Warrior*>(player);
-
-     }
-     else if (ch == 3) {
-        dynamic_cast<Mage*>(player);
-
-     }
-     else if (ch == 4) {
-        dynamic_cast<Paladin*>(player);
-
-     }
-     else if (ch == 5) {
-        dynamic_cast<Farmer*>(player);
-
-     }
- }
 
 class BarFightScene : public Scene {
 public:
@@ -69,15 +48,18 @@ public:
     BarFightScene(string d, string s, Character* c, int choice) : Scene(d, s ,c, choice) { }
 
     void print() {
-        instantiatePlayer();
+       // instantiatePlayer();
         cout << descrip << endl;
         cout << story << endl;
 
-	Fight_Menu fight(player,ch);
+	Fight_Menu fight(player);
 	enemy* drunkard = new enemy(50, 2, 0, 0,"Drunkard");
     fight.initializeEnemy(drunkard);
 	player = fight.print(); //will be typed differently when Fight_Menu is complete
     delete drunkard;
+    cout << "The barman slides you 100 Okra and says, \"Thanks for dealing with the riff-raff\"" << endl;
+    int curr = player->getCurrency();
+    player->setCurrency(curr + 100);
     }
 };
 
@@ -88,7 +70,7 @@ public:
     GuildScene(string d, string s, Character* c, int choice) : Scene(d, s, c, choice) { }
 
     void print() {
-                instantiatePlayer();
+                //instantiatePlayer();
 
 	cout << descrip << endl;
         cout << story << endl;
@@ -101,9 +83,9 @@ public:
 	    cout << "What would you like to do?" << endl;
 	    cout << "1 - Look at Inventory\n2 - Go to the shop\n3 - Take up a quest\n" << endl;
 	    cin >> decision;
-
+        Fight_Menu fight(player);
 	    if (decision == '1') {
-		//Inv.print();
+		fight.checkInventory();
 	    }
 	    else if (decision == '2') {
 		Shop.print();
@@ -127,18 +109,40 @@ public:
     QuestFightScene(string d, string s, Character* c,int choice) : Scene(d, s ,c,choice) { }
 
     void print() {
-                instantiatePlayer();
+                //instantiatePlayer();
 
         cout << descrip << endl;
         cout << story << endl;
 
-        Fight_Menu fight(player,ch);
+        Fight_Menu fight(player);
         enemy* griffin = new enemy(150, 30, 50, 30, "Griffin");
         fight.initializeEnemy(griffin);
         player = fight.print(); //will be typed differently when Fight_Menu is complete
+        cout << "\"Hey you! You've slain that despicable griffin. Here's something for your troble.\"" << endl << "The man gives you 500 Okra" << endl;
         delete griffin;
+        int curr = player->getCurrency();
+        player->setCurrency(curr + 500);
    }
 
+};
+
+class TrollFightScene : public Scene {
+public:
+
+    TrollFightScene(string d, string s, Character* c, int choice) : Scene(d, s ,c, choice) { }
+
+    void print() {
+        cout << descrip << endl;
+        cout << story << endl;
+        Fight_Menu fight(player);
+        enemy* troll = new enemy(300, 45, 50, 30, "Cave Troll");
+        fight.initializeEnemy(troll);
+        player = fight.print();
+        cout << "You exit the cave barely on your feet, dragging the chest out of that smelly old crack in the ground." << endl << "You open the chest to find 500 gold dabloons." << endl;
+        delete troll;
+        Item *i = new QuestItem(10000, "500 Gold Dabloons");
+        player->addInventory(i);
+    }
 };
 
 #endif

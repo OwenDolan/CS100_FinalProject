@@ -30,7 +30,7 @@ void Main_Menu::print() { //prints welcome message and menu options
 
 Character* Main_Menu::print() { //prints welcome message and menu options
     char option;
-    cout << "Welcome to <insert game title here> " << endl;
+    cout << "Welcome to Vanguard " << endl;
     cout << "e - Enter game " << endl;
     cout << "q - exit game" << endl;
     cin >> option;

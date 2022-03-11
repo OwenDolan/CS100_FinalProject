@@ -28,7 +28,7 @@ public:
     int ch;
     enemy* enemie;
     Character* player;
-    Fight_Menu(Character* p, int choice);
+    Fight_Menu(Character* p);
     Character* print(); //prints encounter prompt and displays actions
     int basicAttack(); //gets damage from character class
     int specialAttack();

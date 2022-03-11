@@ -13,6 +13,14 @@ int enemy::specialSkill() {
 	enemySpecialName = "Wild Swing";
 	return this->getAtk() + 3;
 }
+int enemy::specialSkill1() {
+	enemySpecialName = "Wing Slap";
+	return this->getAtk() + 5;
+}
+int enemy::specialSkill2() {
+	enemySpecialName = "Club Bash";
+	return this->getAtk() + 10;
+}
 
 string enemy::getSkillName() {
 	return enemySpecialName;
