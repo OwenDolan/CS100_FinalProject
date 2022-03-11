@@ -2,9 +2,9 @@
 
 using namespace std;
 
-enemy::enemy(int h, int s, int d, int a)
+enemy::enemy(int h, int s, int d, int a, string n)
 	:Character(h, s, d, a)
-{}
+{enemyName = n;}
 
 int enemy::basicAtk() {
 	return this->getAtk();
@@ -17,3 +17,5 @@ int enemy::specialSkill() {
 string enemy::getSkillName() {
 	return enemySpecialName;
 }
+
+

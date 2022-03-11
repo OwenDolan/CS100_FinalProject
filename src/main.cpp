@@ -62,13 +62,13 @@ int main(int argc, const char * argv[]) {
     Item* i = new Healing(1);
     player->addInventory(i);
 
-    BarFightScene BarFight(barFightDescrip, barFightIntro, player);
+    BarFightScene BarFight(barFightDescrip, barFightIntro, player, playerChoice);
     BarFight.print();
 
-    GuildScene Guild(guildDescrip, guildIntro, BarFight.getPlayer());
+    GuildScene Guild(guildDescrip, guildIntro, BarFight.getPlayer(), playerChoice);
     Guild.print();
 
-    QuestFightScene Quest(q1StartDescrip, q1StartIntro, Guild.getPlayer());
+    QuestFightScene Quest(q1StartDescrip, q1StartIntro, Guild.getPlayer(), playerChoice);
     Quest.print();
 
     //Fight_Menu fight(player);

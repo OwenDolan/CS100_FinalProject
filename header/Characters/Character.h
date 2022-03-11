@@ -35,6 +35,7 @@ public:
 	virtual int basicAtk() = 0;
 	virtual int specialSkill() = 0;
 	virtual string getSkillName() = 0;
+	void removeFromInventory(int index);
 };
 
 #endif

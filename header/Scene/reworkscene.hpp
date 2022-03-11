@@ -19,12 +19,14 @@ protected:
     string descrip; //desscribes area you are in
     string story;  // tells you what is going on in the story
     Character* player; //points to player to use in print
+    int ch;
 
 public:
-    Scene(string d, string s, Character* c) {
+    Scene(string d, string s, Character* c, int choice) {
         descrip = d;
 	story = s;
 	player = c;
+    ch = choice;
     }
 
     virtual void print() = 0;
@@ -35,20 +37,47 @@ public:
 
     string getStory() { return story; }
 
+    void instantiatePlayer();
+
 };
+
+ void Scene::instantiatePlayer() {
+     if (ch == 1) {
+         dynamic_cast<Archer*>(player);
+     }
+     else if (ch == 2) {
+        dynamic_cast<Warrior*>(player);
+
+     }
+     else if (ch == 3) {
+        dynamic_cast<Mage*>(player);
+
+     }
+     else if (ch == 4) {
+        dynamic_cast<Paladin*>(player);
+
+     }
+     else if (ch == 5) {
+        dynamic_cast<Farmer*>(player);
+
+     }
+ }
 
 class BarFightScene : public Scene {
 public:
 
-    BarFightScene(string d, string s, Character* c) : Scene(d, s ,c) { }
+    BarFightScene(string d, string s, Character* c, int choice) : Scene(d, s ,c, choice) { }
 
     void print() {
+        instantiatePlayer();
         cout << descrip << endl;
         cout << story << endl;
 
-	Fight_Menu fight(player);
-	enemy drunkard(50, 2, 0, 0);
+	Fight_Menu fight(player,ch);
+	enemy* drunkard = new enemy(50, 2, 0, 0,"Drunkard");
+    fight.initializeEnemy(drunkard);
 	player = fight.print(); //will be typed differently when Fight_Menu is complete
+    delete drunkard;
     }
 };
 
@@ -56,9 +85,11 @@ class GuildScene : public Scene {
 
 public:
 
-    GuildScene(string d, string s, Character* c) : Scene(d, s, c) { }
+    GuildScene(string d, string s, Character* c, int choice) : Scene(d, s, c, choice) { }
 
     void print() {
+                instantiatePlayer();
+
 	cout << descrip << endl;
         cout << story << endl;
 
@@ -93,16 +124,21 @@ public:
 class QuestFightScene : public Scene {
 public:
 
-    QuestFightScene(string d, string s, Character* c) : Scene(d, s ,c) { }
+    QuestFightScene(string d, string s, Character* c,int choice) : Scene(d, s ,c,choice) { }
 
     void print() {
+                instantiatePlayer();
+
         cout << descrip << endl;
         cout << story << endl;
 
-        Fight_Menu fight(player);
-        enemy griffin(150, 30, 50, 30);
+        Fight_Menu fight(player,ch);
+        enemy* griffin = new enemy(150, 30, 50, 30, "Griffin");
+        fight.initializeEnemy(griffin);
         player = fight.print(); //will be typed differently when Fight_Menu is complete
+        delete griffin;
    }
+
 };
 
 #endif

@@ -16,5 +16,5 @@
 class Item_Menu : public Menu {
   
 public:
-    void print(); //prints what items user has in inventory
+    Character* print(); //prints what items user has in inventory
 };

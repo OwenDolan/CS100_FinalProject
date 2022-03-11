@@ -8,14 +8,19 @@
 #include "../../header/Menu/Fight_Menu.hpp"
 #include <iostream>
 #include <typeinfo>
-
+#include <stdlib.h>
 using namespace std;
 
+void Fight_Menu::initializeEnemy(enemy* e) {
+    enemie = e;
+}
+
 Character* Fight_Menu::print() { //prints encounter prompt and displays actions
-    cout << "You've encountered a wild <insert enemy here>" << endl;
+    cout << "You've encountered a wild " << enemie->enemyName << endl;
     bool battle = true;
-    int enemyHealth = 100;
+    int enemyHealth = enemie->getHealth();
     int attackMove = 0;
+    //instantiatePlayer();
     while (battle) {
         cout << "What's the move?: 1. Basic Attack, 2. Special Attack | 3. Check Inventory | 4. Use Item | 5. Run" << endl;
         cin >> attackMove;
@@ -27,10 +32,11 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
         }
         int damage = 0;
         if (attackMove == 1) {
-            damage = basicAttack();
+            damage = player->getAtk();
         }
         else if (attackMove == 2) {
-            damage = specialAttack();
+            damage = player->specialSkill();
+            cout << "You use " << player->getSkillName() << endl;
         }
         else if (attackMove == 3) {
             checkInventory();
@@ -47,13 +53,14 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
                 cin >> item;
             }
             vector<Item*> inventory = player->getInventory();
+            item -= 1;
             Item* i = inventory.at(item);
-            useItem(i);
+            useItem(i, item);
         }
         else if (attackMove == 5) {
             battle = false;
             cout << "You have sucessfully fled the encounter." << endl;
-            run();
+            break;
         }
         else {
             cout << "invalid input. You miss and " << flush;
@@ -64,6 +71,23 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
             battle = false;
         }
         cout << "Enemy has " << enemyHealth << " hp left." << endl;
+
+        int n = enemie->specialSkill();
+        cout << "Enemy attacks you with a " << enemie->enemy::getSkillName() << endl;
+        if (enemie->getAtk() == 0) {
+            cout << "He missed" << endl;
+        }
+        cout << "He deals " << enemie->getAtk() << " damage." << endl;
+        cout << "You have " << player->getHealth() << " hp left." << endl;
+
+        int health = player->getHealth();
+        health -= enemie->getAtk();
+        player->setHealth(health);
+        if (player->getHealth() <= 0) {
+            battle = false;
+            cout << "You died...rip" << endl;
+            exit(0);
+        }
     }
 
     return returnPlayer();
@@ -81,21 +105,22 @@ void Fight_Menu::run() { //leave encounter
     //implement to return to a different scene
 }
 
-Fight_Menu::Fight_Menu(Character* p) {
+Fight_Menu::Fight_Menu(Character* p, int choice) {
     player = p;
+    ch = choice;
 }
 
 Character* Fight_Menu::returnPlayer() {
     return player;
 }
-void Fight_Menu::useItem(Item* i) {
+void Fight_Menu::useItem(Item* i, int index) {
     string s = typeid(i).name();
     if (dynamic_cast<Healing*> (i) != nullptr) {
         Healing* heal = dynamic_cast<Healing*> (i);
         int healing = heal->getHealAmount();
         int prevHealth = player->getHealth();
         player->setHealth(prevHealth += healing);
-        //player->removeFromInventory(i);
+        player->removeFromInventory(index);
     }
     /*
     else if (dynamic_cast<Armor*> (i) != nullptr) {
