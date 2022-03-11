@@ -1,5 +1,6 @@
 #ifndef __CHARACTER_H__
 #define __CHARACTER_H__
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -17,7 +18,6 @@ private:
 	int currency = 0;
 	vector<Item*> inventory;
 
-
 public:
 	Character(int h, int s, int d, int a);
 	int getHealth();
@@ -25,7 +25,7 @@ public:
 	int getDefense();
 	int getAtk();
 	int getCurrency();
-	vector<Item*> getInventory();
+	vector<Item*> &getInventory();
 	void addInventory(Item *i);
 	void setCurrency(int newCurrency);
 	void setSpeed(int newSpeed);
@@ -35,9 +35,6 @@ public:
 	virtual int basicAtk() = 0;
 	virtual int specialSkill() = 0;
 	virtual string getSkillName() = 0;
-
-
-
 };
 
 #endif

@@ -60,7 +60,7 @@ Healing::Healing(int itemNum) {
 
   useable = true;
   equipable = false;
-  deleteable = true;
+  deletable = true;
 }
 
 int Healing::getHealAmount() {

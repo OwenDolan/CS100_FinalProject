@@ -53,7 +53,7 @@ void Character::setDefense(int newDefense) {
 	defense = newDefense;
 }
 
-vector<Item*> Character::getInventory() {
+vector<Item*>& Character::getInventory() {
 	return inventory;
 }
 

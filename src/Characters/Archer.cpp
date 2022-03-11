@@ -7,14 +7,14 @@ Archer::Archer(int h, int s, int d, int a)
 {}
 
 int Archer::basicAtk() {
-	return 5;
+	return this->getAtk();
 }
 
 
 
 int Archer::specialSkill() {
 	archerSpecialName = "Rain Of Arrows";
-	return 5;
+	return this->getAtk() + 5;
 }
 
 string Archer::getSkillName() {

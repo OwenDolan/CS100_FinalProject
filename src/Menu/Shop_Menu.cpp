@@ -15,7 +15,7 @@ ShopMenu::ShopMenu(Character* player) {
   this->player = player;
 }
 
-void ShopMenu::print() {
+Character* ShopMenu::print() {
   cout << "  ------------------------" << endl;
   cout << " |  Welcome to the shop!  | " << endl;
   cout << "  ------------------------" << endl;
@@ -27,7 +27,7 @@ void ShopMenu::print() {
       itemMenu();
     }
     else if (userInput == "sell") {
-      cout << "*IMPLEMENT SELL FUNCTION (need storage menu class)*" << endl;
+      sell(this->player);
     }
     else {
       cout << "Invalid input, please try again" << endl;
@@ -37,23 +37,27 @@ void ShopMenu::print() {
   }
 
   cout << "You left the store" << endl;
+
+  return this->player;
 }
+
 void ShopMenu::buy(Character* player, int item, string t) {
   int currentCurrency = player->getCurrency();
+  Item* newItem;
 
   if (t == "weapon") {
-    new Weapon newItem = Weapon(item);
+    newItem = new Weapon(item);
   }
   else if (t == "armor") {
-    new Armor newItem = Armor(item);
+    newItem = new Armor(item);
   }
   else {
-    new Healing newItem = Healing(item);
+    newItem = new Healing(item);
   }
 
-  if (player->getCurrency() >= newItem->getPrice()) {              /*price check */
+ if (player->getCurrency() >= newItem->getPrice()) {             /* price check */
     player->addInventory(newItem);
-    currentCurrency = currentCurrency - newItem->getPrice() - 50;
+    currentCurrency = currentCurrency - newItem->getPrice();
     player->setCurrency(currentCurrency);
 
     cout << "You have bought the ";
@@ -61,13 +65,59 @@ void ShopMenu::buy(Character* player, int item, string t) {
     cout << endl;
   }
   else {
-    cout << "You don't have enough Okra to buy thhis item"
+    cout << "You don't have enough Okra to buy this item" << endl;
     delete newItem;
+  }
+}
+
+void ShopMenu::sell(Character* player) {
+  cout << "  -----------------  " << endl;
+  cout << " |    INVENTORY    | " << endl;
+  cout << "  -----------------  " << endl;
+
+  int currentCurrency = player->getCurrency();
+
+  if (player->getInventory().size() == 0) {
+    cout << "Your inventory is empty! There's nothing to sell" << endl;
+    return;
+  }
+
+  for (int i = 0; i <= player->getInventory().size() - 1; ++i) {
+    cout << i+1 << ". ";
+    player->getInventory().at(i)->printItemName();
+  }
+
+  cout << "What would you like to sell?" << endl;
+  cout << "*Tip: Type the number of the item you wish to sell*" << endl;
+
+  int sellChoice;
+  cin >> sellChoice;;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (sellChoice == 0 || sellChoice > player->getInventory().size()) {
+    cout << "Invalid choice" << endl;
+  }
+  else if (player->getInventory().at(sellChoice-1)->getDeletable() == false) {
+    cout << "You cannot sell that item" << endl;
+  }
+  else {
+    cout << "You sold the ";
+    player->getInventory().at(sellChoice-1)->printItemName();
+    cout << "for " << player->getInventory().at(sellChoice-1)->getPrice() << " Okra" << endl;
+    currentCurrency += player->getInventory().at(sellChoice - 1)->getPrice();
+
+    delete player->getInventory()[sellChoice-1];
+    player->getInventory().erase(player->getInventory().begin() + (sellChoice - 1));
+
+    player->setCurrency(currentCurrency);
   }
 }
 
 string ShopMenu::menu() {
   string choice;
+  cout << "Currency: " << player->getCurrency() << " Okra" << endl;
   cout << "What would you like to do?" << endl;
   cout << " >Buy" << "   " << " >Sell" << "   " << " >Leave" << endl;
 
@@ -119,6 +169,21 @@ void ShopMenu::healingMenu() {
 
   createHealingList();
   cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+
+  int healingChoice;
+  string type = "healing";
+
+  cin >> healingChoice;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (healingChoice <= 0 || healingChoice > NUM_HEALING_ITEMS) {
+    cout << "Invalid item" << endl;
+  }
+  else {
+    buy(player, healingChoice, type);
+  }
 }
 
 void ShopMenu::armorMenu() {
@@ -128,6 +193,21 @@ void ShopMenu::armorMenu() {
 
   createArmorList();
   cout << "*Tip: Type the number of the item you wish to buy*" << endl;
+
+  int armorChoice;
+  string type = "armor";
+
+  cin >> armorChoice;
+
+  cin.clear();
+  cin.ignore(256, '\n');
+
+  if (armorChoice <= 0 || armorChoice > NUM_ARMOR) {
+    cout << "Invalid item" << endl;
+  }
+  else {
+    buy(player, armorChoice, type);
+  }
 }
 
 void ShopMenu::weaponMenu() {

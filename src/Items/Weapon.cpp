@@ -1,5 +1,5 @@
-#include "Item.h"
-#include "Weapon.h"
+#include "../../header/Items/Item.h"
+#include "../../header/Items/Weapon.h"
 
 #include <iostream>
 #include <string>
@@ -62,11 +62,17 @@ Weapon::Weapon(int itemNum) {
       damageModifier = 100;
       price = 1000;
       break;
+    default:
+      itemName = "Antique Weapon";
+      description = "A broken piece of a would-be weapon. The small bit of weapon is useless for battle but it looks like the metal will sell for a good price.";
+      damageModifier = 0;
+      price = 250;
+      break;
   }
 
   useable = false;
   equipable = true;
-  deleteable = true;
+  deletable = true;
 }
 
 int Weapon::getDamageModifier() {

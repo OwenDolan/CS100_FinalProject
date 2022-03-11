@@ -7,11 +7,11 @@ Warrior::Warrior(int h, int s, int d, int a)
 {}
 
 int Warrior::basicAtk() {
-	return 5;
+	return this->getAtk();
 }
 int Warrior::specialSkill() {
 	warriorSpecialName = "Resonant Smash";
-	return 5;
+	return this->getAtk() + 5;
 }
 
 string Warrior::getSkillName() {
