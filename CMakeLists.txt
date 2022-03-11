@@ -37,6 +37,7 @@ ADD_EXECUTABLE(test
     src/Characters/Mage.cpp
     src/Characters/Archer.cpp
     src/Menu/Shop_Menu.cpp
+    src/Menu/Fight_Menu.cpp
     src/Items/Item.cpp
     src/Items/Healing.cpp
     src/Items/Armor.cpp

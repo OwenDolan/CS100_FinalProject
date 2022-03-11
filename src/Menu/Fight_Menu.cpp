@@ -9,6 +9,7 @@
 #include <iostream>
 #include <typeinfo>
 #include <stdlib.h>
+//#pragma once
 using namespace std;
 
 void Fight_Menu::initializeEnemy(enemy* e) {

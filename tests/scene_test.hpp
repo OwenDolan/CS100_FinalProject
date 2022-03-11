@@ -4,22 +4,25 @@
 #include "gtest/gtest.h"
 
 #include "../header/Scene/reworkscene.hpp"
-
+//#include "../header/Menu/Fight_Menu.hpp"
 TEST(SceneTest, TestDescrip) {
     Character* p = new Archer(0, 0 , 0 ,0);
-    GuildScene* scene1 = new GuildScene("Hey", "You're a rockstar", p); 
+    int index = 0;
+    GuildScene* scene1 = new GuildScene("Hey", "You're a rockstar", p, index); 
     EXPECT_EQ(scene1->getDescrip(), "Hey");
 }
 
 TEST(SceneTest, TestStory) {
     Character* a = new Archer(0, 0 , 0 ,0);
-    GuildScene* scene2 = new GuildScene("Never gonna give you up", "Never gonna let you down", a);
+    int index = 0;
+    GuildScene* scene2 = new GuildScene("Never gonna give you up", "Never gonna let you down", a, index);
     EXPECT_EQ(scene2->getStory(), "Never gonna let you down");
 }
 
 TEST(SceneTest, TestPlayer) {
     Character* e = new Archer(0, 0 , 0 ,0);
-    GuildScene* scene3 = new GuildScene("Steppin on the beat", "du rut du du", e);
+    int index = 0;
+    GuildScene* scene3 = new GuildScene("Steppin on the beat", "du rut du du", e,index);
     EXPECT_EQ(scene3->getPlayer(), e);
 }
 

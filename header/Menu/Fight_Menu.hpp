@@ -7,7 +7,7 @@
 
 #ifndef Fight_Menu_hpp
 #define Fight_Menu_hpp
-
+#pragma once
 #include <stdio.h>
 #include "Menu.hpp"
 #include "../Characters/Character.h"

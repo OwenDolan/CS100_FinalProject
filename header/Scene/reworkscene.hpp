@@ -1,6 +1,6 @@
 #ifndef REWORKSCENE_HPP
 #define REWORKSCENE_HPP
-
+#pragma once
 #include <iostream>
 #include "../Menu/Main_Menu.hpp"
 #include "../Menu/Fight_Menu.hpp"
