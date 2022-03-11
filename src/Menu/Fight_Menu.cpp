@@ -142,11 +142,13 @@ void Fight_Menu::useItem(Item* i, int index) {
     else if (dynamic_cast<Weapon*> (i) != nullptr) {
         Weapon* w = dynamic_cast<Weapon*> (i);
         player->setAtk(player->getAtk() * w->getDamageModifier());
+        player->removeFromInventory(index);
         cout << "You now wield " << flush; w->printItemName(); cout << " your damage has increased by " << w->getDamageModifier() << "x." << endl;
     }
     else if (dynamic_cast<Armor*> (i) != nullptr) {
         Armor* w = dynamic_cast<Armor*> (i);
         player->setDefense(player->getDefense()+w->getDamageReduction());
+        player->removeFromInventory(index);
         cout << "You now don the " << flush; w->printItemName(); cout << " your defense has increased by " << w->getDamageReduction() << "." << endl;
     }
     

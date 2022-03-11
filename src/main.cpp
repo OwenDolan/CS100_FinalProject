@@ -61,11 +61,12 @@ int main(int argc, const char * argv[]) {
     begin.print();
     int playerChoice = begin.chooseCharacter();
     choosePlayer(playerChoice);
+    /*
     Item* i = new Healing(1);
     player->addInventory(i);
     Item *j = new QuestItem(10000, "500 Gold Dabloons");
         player->addInventory(j);
-
+    */
     BarFightScene BarFight(barFightDescrip, barFightIntro, player, playerChoice);
     BarFight.print();
 
@@ -75,23 +76,21 @@ int main(int argc, const char * argv[]) {
     QuestFightScene Quest(q1StartDescrip, q1StartIntro, Guild.getPlayer(), playerChoice);
     Quest.print();
 
-    GuildScene Guild(guildDescrip, guildIntro, BarFight.getPlayer(), playerChoice);
-    Guild.print();
+    GuildScene Guild2(guildDescrip, "", BarFight.getPlayer(), playerChoice);
+    Guild2.print();
 
-    TrollFightScene Quest(dungeonDescrip, dungeonIntro, Guild.getPlayer(), playerChoice);
-    Quest.print();
+    TrollFightScene Fight(dungeonIntro, dungeonDescrip, Guild.getPlayer(), playerChoice);
+    Fight.print();
 
-    GuildScene Guild(guildDescrip, guildIntro, BarFight.getPlayer(), playerChoice);
-    Guild.print();
+    GuildScene Guild1(guildDescrip, "", BarFight.getPlayer(), playerChoice);
+    Guild1.print();
 
     //Fight_Menu fight(player);
     //fight.print();
 
     cout << "In a drunken stupor after celebrating your new found riches, you stagger outside to have a wee, but your poor footwork leads you to the edge of the precipice the Guild reigns upon, to which you prompty fall over and plummet to your death..." << endl << endl;
-    cout << "Thank you for playing" << endl;
+    cout << "Thank you for playing." << endl;
     
-    delete player;
-    delete i;
 
     return 0;
 }
