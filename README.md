@@ -35,13 +35,47 @@
  > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
  > Before the demo, you should do the following:
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
+
+>
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
- ## Screenshots
- > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ >  1. Download the file as a zip.
+ >  2. Run ./game.
+ >  3. You are then first prompted to start a new game or quit.
+ >  4. You are then prompted to choose which character to play.
+ >  
+ ## Screenshots
+![image](https://user-images.githubusercontent.com/78832934/157957876-fa6ede8b-fec3-4ad0-9a6d-94604aca3fef.png)
+>(Running and starting the game, the starting scene along with prompt to start game)
+
+![image](https://user-images.githubusercontent.com/78832934/157957883-07d57ca8-f412-4e94-a931-771d322aca2c.png)
+>(Choosing Character Class)
+
+![image](https://user-images.githubusercontent.com/78832934/157957896-687d22b6-4ff8-4f00-b7dd-7eb50a0a99bd.png)
+>(A Plot relevent Scene to start the journey, leading into the first enemy fight!)
+
+![image](https://user-images.githubusercontent.com/78832934/157957916-85aedae9-d737-4ff5-a6ff-939787726d40.png)
+> (The plot leads to a decision tree, where you can choose a quest (which opens up scenes and more enemies), the inventory, or the shop menu)
+
+![image](https://user-images.githubusercontent.com/78832934/157957933-1269ba04-4a81-482a-bc73-1d8906872c88.png)
+>(Going into the shop, you see that there is another decision tree, prompting more parts of the shop menu)
+
+![image](https://user-images.githubusercontent.com/78832934/157957941-7ec2374c-9799-4956-8260-b31b89997546.png)
+> (You can buy strong items to help you on your quest, using the currency (Okra) gained from enemy battles)
+
+![image](https://user-images.githubusercontent.com/78832934/157957983-8db0687d-2f26-4774-b7ce-5844fd771666.png)
+> (Once you leave the decision tree, you are back on your journey!)
+
+![image](https://user-images.githubusercontent.com/78832934/157957996-ba67aa9a-d77a-45df-8b9e-233b056f2c31.png)
+>(You start your new quest, but your decisions seem to have alot of work to do!)
+
+
+
+ 
+
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+We created google unit tests for different objects, for scene its different getter functions, making sure that it returns and constructs properly. For character we  tested to see the unique attack fucntions and special attacks for each different characters, making sure that the algorithms for the damage based on each characters special attack was correct. The shop test was functional and checked menu within its own environment, to see if formatting and functionality was working, and to make sure that it could interact with other other characters and items. We also used valgrind to make sure there were no memory leaks, using the full clean check function to make sure that ./game creates any memory leaks. 
+
  
