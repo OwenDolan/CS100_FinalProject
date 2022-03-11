@@ -44,7 +44,7 @@ ADD_EXECUTABLE(test
 )
 
 ADD_EXECUTABLE(shop
-    src/Menu/Shop_Menu_test.cpp
+    tests/Shop_Menu_test.cpp
     src/Menu/Menu.cpp
     src/Menu/Shop_Menu.cpp
     src/Characters/Character.cpp
