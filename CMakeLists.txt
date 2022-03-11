@@ -19,6 +19,11 @@ ADD_EXECUTABLE(game
     src/Characters/Archer.cpp
     src/Items/Item.cpp
     src/Items/Healing.cpp
+    src/Menu/Shop_Menu.cpp
+    src/Items/Armor.cpp
+    src/Items/Healing.cpp
+    src/Items/Item.cpp
+    src/Items/Weapon.cpp
 )
 
 ADD_EXECUTABLE(test
