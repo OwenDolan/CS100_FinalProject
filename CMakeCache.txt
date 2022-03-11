@@ -537,5 +537,17 @@ _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;6;8;64;m;cpython-36m-x86_64-lin
 _Python_INTERPRETER_SIGNATURE:INTERNAL=d56fdd14317999eabbcae3dea187bdf7
 cmake_package_name:INTERNAL=GTest
 generated_dir:INTERNAL=/home/csmajs/jkoh006/final-project-sleon027-jkoh006-mloui019-ssrin027-odola001/googletest/googletest/generated
+//ADVANCED property for variable: gmock_build_tests
+gmock_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_samples
+gtest_build_samples-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_tests
+gtest_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_disable_pthreads
+gtest_disable_pthreads-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_force_shared_crt
+gtest_force_shared_crt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_hide_internal_symbols
+gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
 targets_export_name:INTERNAL=GTestTargets
 

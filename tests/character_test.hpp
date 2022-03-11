@@ -31,14 +31,14 @@ TEST(CharacterTest, TestSetterFunctionality) {
 TEST(CharacterTest, TestSpecialSkill) {
 	Character* player;
 	player = new Archer(10, 10, 10, 10);
-	EXPECT_EQ(player->specialSkill(), 5);
+	EXPECT_EQ(player->specialSkill(), 15);
 	EXPECT_EQ(player->getSkillName(), "Rain Of Arrows");
 }
 
 TEST(CharacterTest, TestBasicAtk) {
 	Character* player;
-	player = new Farmer(10, 10, 10, 10);
-	EXPECT_EQ(player->basicAtk(), 5);
+	player = new Archer(10, 10, 10, 10);
+	EXPECT_EQ(player->basicAtk(), 10);
 }
 
 
