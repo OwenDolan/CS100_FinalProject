@@ -6,8 +6,8 @@
 
 #include <iostream>
 //#include "../header/Menu/Menu.hpp"
-#include "../header/Menu/Main_Menu.hpp"
-#include "../header/Menu/Fight_Menu.hpp"
+//#include "../header/Menu/Main_Menu.hpp"
+//#include "../header/Menu/Fight_Menu.hpp"
 #include "../header/Characters/Character.h"
 #include "../header/Characters/Archer.h"
 #include "../header/Characters/Warrior.h"
@@ -65,11 +65,18 @@ int main(int argc, const char * argv[]) {
     BarFightScene BarFight(barFightDescrip, barFightIntro, player);
     BarFight.print();
 
-    GuildScene Guild(guildDescrip, guildIntro, barFight.getPlayer());
+    GuildScene Guild(guildDescrip, guildIntro, BarFight.getPlayer());
     Guild.print();
 
-    Fight_Menu fight(player);
-    fight.print();
+    QuestFightScene Quest(q1StartDescrip, q1StartIntro, Guild.getPlayer());
+    Quest.print();
+
+    //Fight_Menu fight(player);
+    //fight.print();
+
+    cout << "You fell off the mountain and died..." << endl << endl;
+    cout << "Thank you for playing" << endl;
+    
     delete player;
     delete i;
 

@@ -46,7 +46,7 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
                 cin.ignore();
                 cin >> item;
             }
-            vector<Item*> inventory = player->returnInventory();
+            vector<Item*> inventory = player->getInventory();
             Item* i = inventory.at(item);
             useItem(i);
         }
@@ -95,7 +95,7 @@ void Fight_Menu::useItem(Item* i) {
         int healing = heal->getHealAmount();
         int prevHealth = player->getHealth();
         player->setHealth(prevHealth += healing);
-        player->removeFromInventory(i);
+        //player->removeFromInventory(i);
     }
     /*
     else if (dynamic_cast<Armor*> (i) != nullptr) {
@@ -108,7 +108,7 @@ void Fight_Menu::useItem(Item* i) {
 }
 
 void Fight_Menu::checkInventory() {
-    vector<Item*> inventory = player->returnInventory();
+    vector<Item*> inventory = player->getInventory();
         for (int i = 0; i < inventory.size(); i++) {
             int num = i;
             cout << ++num << ". " << flush;
@@ -116,4 +116,4 @@ void Fight_Menu::checkInventory() {
         }
 }
 
-int Fight_Menu::chooseCharacter() { return 0; }
+//int Fight_Menu::chooseCharacter() { return 0; }

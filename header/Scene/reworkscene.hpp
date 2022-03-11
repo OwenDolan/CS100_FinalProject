@@ -12,10 +12,10 @@
 #include "../Characters/Warrior.h"
 #include "../Characters/enemy.h"
 #include "../Menu/Shop_Menu.h"
-#include "../Menu/Item_Menu.h"
+//#include "../Menu/Item_Menu.hpp"
 
 class Scene {
-private:
+protected:
     string descrip; //desscribes area you are in
     string story;  // tells you what is going on in the story
     Character* player; //points to player to use in print
@@ -25,6 +25,7 @@ public:
         descrip = d;
 	story = s;
 	player = c;
+    }
 
     virtual void print() = 0;
 
@@ -46,8 +47,8 @@ public:
         cout << story << endl;
 
 	Fight_Menu fight(player);
-	Enemy drunkard;
-	player = fight.print(enemy);
+	enemy drunkard(50, 2, 0, 0);
+	player = fight.print(); //will be typed differently when Fight_Menu is complete
     }
 };
 
@@ -55,15 +56,15 @@ class GuildScene : public Scene {
 
 public:
 
-    GuildScene((string d, string s, Character* c) : Scene(d, s, c) { }
+    GuildScene(string d, string s, Character* c) : Scene(d, s, c) { }
 
     void print() {
 	cout << descrip << endl;
         cout << story << endl;
 
 	char decision = 'a';
-	Shop_Menu Shop(player);
-	Item_Menu Inv(player);
+	ShopMenu Shop(player);
+	//Item_Menu Inv(player);
 
 	while (decision != '3') {
 	    cout << "What would you like to do?" << endl;
@@ -71,7 +72,7 @@ public:
 	    cin >> decision;
 
 	    if (decision == '1') {
-		Inv.print();
+		//Inv.print();
 	    }
 	    else if (decision == '2') {
 		Shop.print();
@@ -89,3 +90,19 @@ public:
 
 }; 
 
+class QuestFightScene : public Scene {
+public:
+
+    QuestFightScene(string d, string s, Character* c) : Scene(d, s ,c) { }
+
+    void print() {
+        cout << descrip << endl;
+        cout << story << endl;
+
+        Fight_Menu fight(player);
+        enemy griffin(150, 30, 50, 30);
+        player = fight.print(); //will be typed differently when Fight_Menu is complete
+   }
+};
+
+#endif
