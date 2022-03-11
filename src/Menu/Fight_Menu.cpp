@@ -65,6 +65,7 @@ Character* Fight_Menu::print() { //prints encounter prompt and displays actions
         }
         cout << "Enemy has " << enemyHealth << " hp left." << endl;
     }
+
     return returnPlayer();
 }
 int Fight_Menu::basicAttack() { //gets damage from character class
@@ -87,8 +88,6 @@ Fight_Menu::Fight_Menu(Character* p) {
 Character* Fight_Menu::returnPlayer() {
     return player;
 }
-
-<<<<<<< HEAD
 void Fight_Menu::useItem(Item* i) {
     string s = typeid(i).name();
     if (dynamic_cast<Healing*> (i) != nullptr) {
@@ -116,6 +115,5 @@ void Fight_Menu::checkInventory() {
             inventory.at(i)->printItemName();
         }
 }
-=======
+
 int Fight_Menu::chooseCharacter() { return 0; }
->>>>>>> f109f61e44a865b791ba344a0147099c4a76cd17

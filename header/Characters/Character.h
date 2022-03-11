@@ -1,5 +1,6 @@
 #ifndef __CHARACTER_H__
 #define __CHARACTER_H__
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,7 +17,6 @@ private:
 	int atk; 
 	int currency = 0;
 	vector<Item*> inventory;
-
 
 public:
 	Character(int h, int s, int d, int a);
@@ -35,9 +35,6 @@ public:
 	virtual int basicAtk() = 0;
 	virtual int specialSkill() = 0;
 	virtual string getSkillName() = 0;
-
-
-
 };
 
 #endif
