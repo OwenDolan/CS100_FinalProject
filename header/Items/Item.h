@@ -24,4 +24,12 @@ class Item {
     bool deletable;
 };
 
+class QuestItem : public Item {
+public:
+QuestItem(int p, string name) {
+  price = p;
+  itemName = name;
+}
+void display() {}
+};
 #endif

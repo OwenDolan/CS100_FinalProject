@@ -1,5 +1,4 @@
 #include "../../header/Characters/Character.h"
-
 using namespace std;
 
 
@@ -60,3 +59,20 @@ vector<Item*>& Character::getInventory() {
 void Character::addInventory(Item *i) {
 	inventory.push_back(i);
 }
+
+	void Character::removeFromInventory(int index) {
+		inventory.erase(inventory.begin()+index);
+	}
+
+/*
+ 	int Character::basicAtk() {
+	return atk;
+}
+	int Character::specialSkill() {
+		return atk + 5;
+	}
+
+	string Character::getSkillName() {
+		return "";
+	}
+*/

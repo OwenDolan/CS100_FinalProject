@@ -66,7 +66,7 @@ void ShopMenu::buy(Character* player, int item, string t) {
   }
   else {
     cout << "You don't have enough Okra to buy this item" << endl;
-    delete newItem;
+    //delete newItem;
   }
 }
 
@@ -98,17 +98,17 @@ void ShopMenu::sell(Character* player) {
 
   if (sellChoice == 0 || sellChoice > player->getInventory().size()) {
     cout << "Invalid choice" << endl;
-  }
+  }/*
   else if (player->getInventory().at(sellChoice-1)->getDeletable() == false) {
     cout << "You cannot sell that item" << endl;
-  }
+  }*/
   else {
     cout << "You sold the ";
     player->getInventory().at(sellChoice-1)->printItemName();
     cout << "for " << player->getInventory().at(sellChoice-1)->getPrice() << " Okra" << endl;
     currentCurrency += player->getInventory().at(sellChoice - 1)->getPrice();
 
-    delete player->getInventory()[sellChoice-1];
+    //delete player->getInventory()[sellChoice-1];
     player->getInventory().erase(player->getInventory().begin() + (sellChoice - 1));
 
     player->setCurrency(currentCurrency);
