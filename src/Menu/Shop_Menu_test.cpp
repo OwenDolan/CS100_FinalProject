@@ -24,5 +24,11 @@ int main() {
 	inv.at(i)->printItemName();
     }
 
+    for (int i = 0; i < inv.size(); ++i) {
+        delete inv.at(i);
+    }
+    
+    delete player;
+
     return 0;
 }
