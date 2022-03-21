@@ -10,6 +10,7 @@ TEST(SceneTest, TestDescrip) {
     int index = 0;
     GuildScene* scene1 = new GuildScene("Hey", "You're a rockstar", p, index); 
     EXPECT_EQ(scene1->getDescrip(), "Hey");
+    delete scene1;
 }
 
 TEST(SceneTest, TestStory) {
@@ -17,6 +18,7 @@ TEST(SceneTest, TestStory) {
     int index = 0;
     GuildScene* scene2 = new GuildScene("Never gonna give you up", "Never gonna let you down", a, index);
     EXPECT_EQ(scene2->getStory(), "Never gonna let you down");
+    delete scene2;
 }
 
 TEST(SceneTest, TestPlayer) {
@@ -24,6 +26,7 @@ TEST(SceneTest, TestPlayer) {
     int index = 0;
     GuildScene* scene3 = new GuildScene("Steppin on the beat", "du rut du du", e,index);
     EXPECT_EQ(scene3->getPlayer(), e);
+    delete scene3;
 }
 
 #endif
