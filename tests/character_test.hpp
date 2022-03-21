@@ -18,7 +18,7 @@ TEST(CharacterTest, TestConstructor) {
 	EXPECT_EQ(player->getDefense(), 10);
 	EXPECT_EQ(player->getHealth(), 10);
 	EXPECT_EQ(player->getSpeed(), 10);
-	
+	delete player;	
 }
 
 TEST(CharacterTest, TestSetterFunctionality) {
@@ -26,6 +26,7 @@ TEST(CharacterTest, TestSetterFunctionality) {
 	player = new Paladin(10, 10, 10, 10);
 	player->setAtk(20);
 	EXPECT_EQ(player->getAtk(), 20);
+	delete player;
 }
 
 TEST(CharacterTest, TestSpecialSkill) {
@@ -33,12 +34,14 @@ TEST(CharacterTest, TestSpecialSkill) {
 	player = new Archer(10, 10, 10, 10);
 	EXPECT_EQ(player->specialSkill(), 15);
 	EXPECT_EQ(player->getSkillName(), "Rain Of Arrows");
+	delete player;
 }
 
 TEST(CharacterTest, TestBasicAtk) {
 	Character* player;
 	player = new Archer(10, 10, 10, 10);
 	EXPECT_EQ(player->basicAtk(), 10);
+	delete player;
 }
 
 
